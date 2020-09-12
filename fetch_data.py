@@ -30,12 +30,12 @@ df1 = pd.read_excel('data.xlsx', sheet_name='Sheet1') # can also index sheet by 
 print(df1)
 
 df1.insert(8,"Bed occupancy",newlist,True)
-print(df1)
 
 n95 = df1['N95 Masks'].tolist()
-names = df1['Health System/Hospital'].tolist()
-
-print(n95)
+surg = df1['Surgical Masks'].tolist()
+gown = df1['Surgical Gowns'].tolist()
+eye = df1['Eye Protection'].tolist()
+glove = df1['Gloves'].tolist()
 
 for i in range(0,len(n95)):
     if(n95[i]=="21+ days"):
@@ -47,9 +47,51 @@ for i in range(0,len(n95)):
     else:
         n95[i]=0.25
 
-print(n95)
+for i in range(0,len(surg)):
+    if(surg[i]=="21+ days"):
+        surg[i]=1
+    elif(surg[i]=="15-21 days"):
+        surg[i]=0.75
+    elif(surg[i]=="7-14 days"):
+        surg[i]=0.5
+    else:
+        surg[i]=0.25
 
-df1.insert(2,"N95 masks",n95,True)
+for i in range(0,len(gown)):
+    if(gown[i]=="21+ days"):
+        gown[i]=1
+    elif(gown[i]=="15-21 days"):
+        gown[i]=0.75
+    elif(gown[i]=="7-14 days"):
+        gown[i]=0.5
+    else:
+        gown[i]=0.25
+
+for i in range(0,len(eye)):
+    if(eye[i]=="21+ days"):
+        eye[i]=1
+    elif(eye[i]=="15-21 days"):
+        eye[i]=0.75
+    elif(eye[i]=="7-14 days"):
+        eye[i]=0.5
+    else:
+        eye[i]=0.25
+
+for i in range(0,len(glove)):
+    if(glove[i]=="21+ days"):
+        glove[i]=1
+    elif(glove[i]=="15-21 days"):
+        glove[i]=0.75
+    elif(glove[i]=="7-14 days"):
+        glove[i]=0.5
+    else:
+        glove[i]=0.25
+
+df1.insert(3,"N95 masks scores",n95,True)
+df1.insert(5,"Surgery masks scores",surg,True)
+df1.insert(7,"Gowns scores",gown,True)
+df1.insert(9,"Eye scores",eye,True)
+df1.insert(11,"Glove scores",glove,True)
 
 
 
