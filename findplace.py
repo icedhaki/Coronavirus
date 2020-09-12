@@ -190,7 +190,7 @@ def findplace():
     df1 = pd.read_excel('data1.xlsx', sheet_name='Sheet1')
     covid = df1['COVID-19 Patients'].tolist()
     icu = df1['COVID-19 Patients in ICU'].tolist()
-
+    bed = df['Bed occupancy'].tolist()
     #for i in range(0,len(names)):
     #    val=
 
@@ -209,17 +209,19 @@ def findplace():
 
     for i in range(0,len(names)):
         string="Hospital name: "+names[i]+"<br> Number of COVID patients: "+str(covid[i])+"<br> Number of ICU patients: "+str(icu[i])
-        if new[i]>=0.0 and new[i]<1.5:
-            c='green'
-        elif new[i]>=1.5 and new[i]<3.0:
-            c='orange'
-        else:
+        if mylist[i]>=0.0 and mylist[i]<0.25:
             c='red'
+        elif mylist[i]>=0.25 and mylist[i]<0.5:
+            c='orange'
+        elif mylist[i]>=0.5 and mylist[i]<0.75:
+            c='yellow'
+        else:
+            c='green'
         
         folium.Circle(
             location=array[i],
             popup=folium.Popup(string, max_width=300,min_width=0),
-            radius=1000*mylist[i],
+            radius=5000*(bed[i]+1),
             color=c,
             fill=True,
             fill_color=c
