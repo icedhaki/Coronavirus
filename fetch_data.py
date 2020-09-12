@@ -98,9 +98,7 @@ df1.insert(5,"Surgery masks scores",surg,True)
 df1.insert(7,"Gowns scores",gown,True)
 df1.insert(9,"Eye scores",eye,True)
 df1.insert(11,"Glove scores",glove,True)
-
-
-
-
 df1.insert(14,"final score",score,True)
+
+df1 = df1.sort_values('final score')
 df1.to_excel("data.xlsx")
