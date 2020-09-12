@@ -187,8 +187,9 @@ for i in range(0,len(names)):
 
 print(array)
 
-
-
+df1 = pd.read_excel('data1.xlsx', sheet_name='Sheet1')
+covid = df1['COVID-19 Patients'].tolist()
+icu = df1['COVID-19 Patients in ICU'].tolist()
 
 #for i in range(0,len(names)):
 #    val=
@@ -199,38 +200,32 @@ m = folium.Map(
     tiles='Stamen Terrain'
 )
 
+new = []
+for i in range(0,len(mylist)):
+    s=6-mylist[i]
+    new.append(s)
+
+print(new)
+
 for i in range(0,len(names)):
-   folium.Circle(
-      location=array[i],
-      popup=names[i],
-      radius=1000*mylist[i],
-      color='red',
-      fill=True,
-      fill_color='red'
-   ).add_to(m)
+    string="Hospital name: "+names[i]+"<br> Number of COVID patients: "+str(covid[i])+"<br> Number of ICU patients: "+str(icu[i])
+    if new[i]>=0.0 and new[i]<1.5:
+        c='green'
+    elif new[i]>=1.5 and new[i]<3.0:
+        c='orange'
+    else:
+        c='red'
+    
+    folium.Circle(
+        location=array[i],
+        popup=folium.Popup(string, max_width=300,min_width=0),
+        radius=1000*mylist[i],
+        color=c,
+        fill=True,
+        fill_color=c
+    ).add_to(m)
 
 filepath = "map.html"
 m.save(filepath)
 webbrowser.open('file://' + filepath)
 
-
-
-
-'''
-for lat, lon, traffic_q, traffic, bike, city in zip(df['latitude'], df['longitude'], df['traffic_index_quartile'], df['traffic_index'], df['bike_score'], df['city']):
-    folium.CircleMarker(
-        [lat, lon],
-        radius=.15*bike,
-        popup = ('City: ' + str(city).capitalize() + '<br>'
-                 'Bike score: ' + str(bike) + '<br>'
-                 'Traffic level: ' + str(traffic) +'%'
-                ),
-        color='b',
-        key_on = traffic_q,
-        threshold_scale=[0,1,2,3],
-        fill_color=colordict[traffic_q],
-        fill=True,
-        fill_opacity=0.7
-        ).add_to(traffic_map)
-traffic_map
-'''
