@@ -23,42 +23,38 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_8d313e33de7d4f028cd9c34a44f45898 {
+                #map_f65a8e07e7a4448d827b78adbafd5af8 {
                     position: relative;
                     width: 80.0%;
                     height: 80.0%;
                     left: 0.0%;
                     top: 0.0%;
-                    margin: auto
+                    margin: auto;
                 }
             </style>
         
 </head>
 <body>    
-    <h1>
-        <a href="thank">Hospital Thank You's</a>
-    </h1>
-    <div style="display:flex">
-        <div>
-            Corona Helping Hands
-        </div>
+    <h1><a href="/thank">Hospital Thank Yous!</a></h1>
+    <div style="display: flex">
+        <div>Corona Helping Hands</div>
         <div id="datetime"></div>
     </div>
-        <div class="folium-map" id="map_8d313e33de7d4f028cd9c34a44f45898" ></div>
+    <div class="folium-map" id="map_f65a8e07e7a4448d827b78adbafd5af8" ></div>
         
 </body>
-    <script>
+<script>
     var dt = new Date();
     document.getElementById("datetime").innerHTML = "Last Updated: " + dt.toLocaleDateString() + " " + dt.toLocaleTimeString();
-    </script>
+</script>
 <script>    
     
-            var map_8d313e33de7d4f028cd9c34a44f45898 = L.map(
-                "map_8d313e33de7d4f028cd9c34a44f45898",
+            var map_f65a8e07e7a4448d827b78adbafd5af8 = L.map(
+                "map_f65a8e07e7a4448d827b78adbafd5af8",
                 {
                     center: [44.3148, -85.6024],
                     crs: L.CRS.EPSG3857,
-                    zoom: 6.5,
+                    zoom: 7.5,
                     zoomControl: true,
                     preferCanvas: false,
                 }
@@ -68,862 +64,862 @@
 
         
     
-            var tile_layer_143c57801db544eb856d259db82fcc1d = L.tileLayer(
+            var tile_layer_a41e212a336448edb18912e145266806 = L.tileLayer(
                 "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
                 {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-            var circle_242f702cd3f34583a0050011ca0eefca = L.circle(
+            var circle_d147a1bc364147a99c31d529fdf1f16d = L.circle(
                 [43.0214202, -83.7045634],
                 {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2000.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_a3310388a4cf4b45989085fb67f6f30b = L.popup({"maxWidth": "100%"});
+        var popup_10f5fba8e09946709ffe2468a8d3d302 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_9feadf3941a84f4188dccd127db7fce1 = $(`<div id="html_9feadf3941a84f4188dccd127db7fce1" style="width: 100.0%; height: 100.0%;">Hurley Medical Center</div>`)[0];
-            popup_a3310388a4cf4b45989085fb67f6f30b.setContent(html_9feadf3941a84f4188dccd127db7fce1);
+            var html_593fde8e666c4232bef7d61a665a631a = $(`<div id="html_593fde8e666c4232bef7d61a665a631a" style="width: 100.0%; height: 100.0%;">Hospital name: Hurley Medical Center<br> Number of COVID patients: 71<br> Number of ICU patients: 24</div>`)[0];
+            popup_10f5fba8e09946709ffe2468a8d3d302.setContent(html_593fde8e666c4232bef7d61a665a631a);
         
 
-        circle_242f702cd3f34583a0050011ca0eefca.bindPopup(popup_a3310388a4cf4b45989085fb67f6f30b)
+        circle_d147a1bc364147a99c31d529fdf1f16d.bindPopup(popup_10f5fba8e09946709ffe2468a8d3d302)
         ;
 
         
     
     
-            var circle_6d522368d9d84d1097800161b348d887 = L.circle(
+            var circle_a1639f63149347189dca68b3922bf354 = L.circle(
                 [44.7567962, -85.57745709999999],
                 {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2634.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_66cac0feb5a3451f9820c802c4b01d9b = L.popup({"maxWidth": "100%"});
+        var popup_0d2b3805127a4f7786bfbc6ab687e9ed = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_2e92c9ece0284d449e6ed739de1605c8 = $(`<div id="html_2e92c9ece0284d449e6ed739de1605c8" style="width: 100.0%; height: 100.0%;">Munson Health System</div>`)[0];
-            popup_66cac0feb5a3451f9820c802c4b01d9b.setContent(html_2e92c9ece0284d449e6ed739de1605c8);
+            var html_1d190a6e89d44601adf34ea3b133cab4 = $(`<div id="html_1d190a6e89d44601adf34ea3b133cab4" style="width: 100.0%; height: 100.0%;">Hospital name: Munson Health System<br> Number of COVID patients: 7<br> Number of ICU patients: 0</div>`)[0];
+            popup_0d2b3805127a4f7786bfbc6ab687e9ed.setContent(html_1d190a6e89d44601adf34ea3b133cab4);
         
 
-        circle_6d522368d9d84d1097800161b348d887.bindPopup(popup_66cac0feb5a3451f9820c802c4b01d9b)
+        circle_a1639f63149347189dca68b3922bf354.bindPopup(popup_0d2b3805127a4f7786bfbc6ab687e9ed)
         ;
 
         
     
     
-            var circle_fef6a237cdd547af97ce54e52d3d0461 = L.circle(
+            var circle_3528a0c46f234203a442f5819164c978 = L.circle(
                 [42.5145386, -83.1926244],
                 {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2780.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_2f5adfb7ca40477eb6010e42d9a9af45 = L.popup({"maxWidth": "100%"});
+        var popup_0b68444bee0c47f68fc0f6230f454588 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_87a3811b8a9a45788f67a542eddc1a66 = $(`<div id="html_87a3811b8a9a45788f67a542eddc1a66" style="width: 100.0%; height: 100.0%;">Beaumont</div>`)[0];
-            popup_2f5adfb7ca40477eb6010e42d9a9af45.setContent(html_87a3811b8a9a45788f67a542eddc1a66);
+            var html_c17f5589b4c04501b337b93f533c2d1f = $(`<div id="html_c17f5589b4c04501b337b93f533c2d1f" style="width: 100.0%; height: 100.0%;">Hospital name: Beaumont<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_0b68444bee0c47f68fc0f6230f454588.setContent(html_c17f5589b4c04501b337b93f533c2d1f);
         
 
-        circle_fef6a237cdd547af97ce54e52d3d0461.bindPopup(popup_2f5adfb7ca40477eb6010e42d9a9af45)
+        circle_3528a0c46f234203a442f5819164c978.bindPopup(popup_0b68444bee0c47f68fc0f6230f454588)
         ;
 
         
     
     
-            var circle_c6930ec628d64abc9a0a5032f21f6fa1 = L.circle(
+            var circle_78e05cb99d2a482ca1fe5f97b5d0a28d = L.circle(
                 [42.28391430000001, -83.7332766],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3164.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3164.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_83f49691ce2b4de2944e4d5bdeb661de = L.popup({"maxWidth": "100%"});
+        var popup_c65d7f323df24a57843a759dbf622aac = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_b0b6d58586b645ef969e0dcbfe7f3cbd = $(`<div id="html_b0b6d58586b645ef969e0dcbfe7f3cbd" style="width: 100.0%; height: 100.0%;">Michigan Medicine</div>`)[0];
-            popup_83f49691ce2b4de2944e4d5bdeb661de.setContent(html_b0b6d58586b645ef969e0dcbfe7f3cbd);
+            var html_af5393b070e9402fb7e09038647e360b = $(`<div id="html_af5393b070e9402fb7e09038647e360b" style="width: 100.0%; height: 100.0%;">Hospital name: Michigan Medicine<br> Number of COVID patients: 125<br> Number of ICU patients: 35</div>`)[0];
+            popup_c65d7f323df24a57843a759dbf622aac.setContent(html_af5393b070e9402fb7e09038647e360b);
         
 
-        circle_c6930ec628d64abc9a0a5032f21f6fa1.bindPopup(popup_83f49691ce2b4de2944e4d5bdeb661de)
+        circle_78e05cb99d2a482ca1fe5f97b5d0a28d.bindPopup(popup_c65d7f323df24a57843a759dbf622aac)
         ;
 
         
     
     
-            var circle_91d9138501b3494a8eb5d9cf8215ca73 = L.circle(
+            var circle_cb4cc3efe77a4cdf9659f2f3f2092004 = L.circle(
                 [43.6355505, -84.2608259],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3213.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3213.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_73124992a3cd4e4fbd3bbfbbe283c4a0 = L.popup({"maxWidth": "100%"});
+        var popup_7453d200eaae4a449c265e9296511f36 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_27bdfa7401674b9d9ad832c4ce1031ca = $(`<div id="html_27bdfa7401674b9d9ad832c4ce1031ca" style="width: 100.0%; height: 100.0%;">MidMichigan Health</div>`)[0];
-            popup_73124992a3cd4e4fbd3bbfbbe283c4a0.setContent(html_27bdfa7401674b9d9ad832c4ce1031ca);
+            var html_d4faae7feb844aaaa369be798dc88a35 = $(`<div id="html_d4faae7feb844aaaa369be798dc88a35" style="width: 100.0%; height: 100.0%;">Hospital name: MidMichigan Health<br> Number of COVID patients: 15<br> Number of ICU patients: 5</div>`)[0];
+            popup_7453d200eaae4a449c265e9296511f36.setContent(html_d4faae7feb844aaaa369be798dc88a35);
         
 
-        circle_91d9138501b3494a8eb5d9cf8215ca73.bindPopup(popup_73124992a3cd4e4fbd3bbfbbe283c4a0)
+        circle_cb4cc3efe77a4cdf9659f2f3f2092004.bindPopup(popup_7453d200eaae4a449c265e9296511f36)
         ;
 
         
     
     
-            var circle_b7f3baec396749629772f5118b4bda1a = L.circle(
+            var circle_d49b0c15f9db4851b5cf7fd404a44266 = L.circle(
                 [41.9381529, -84.9893546],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3717.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3717.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_0cbf279c397341c29cf9c177c1937f10 = L.popup({"maxWidth": "100%"});
+        var popup_d762ca55e1b04bc291387d0439da0fdf = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_4f42518b8a37414fa892b00869e95bf8 = $(`<div id="html_4f42518b8a37414fa892b00869e95bf8" style="width: 100.0%; height: 100.0%;">ProMedica</div>`)[0];
-            popup_0cbf279c397341c29cf9c177c1937f10.setContent(html_4f42518b8a37414fa892b00869e95bf8);
+            var html_27257ce5b26749aeafe7a0fe49e0e293 = $(`<div id="html_27257ce5b26749aeafe7a0fe49e0e293" style="width: 100.0%; height: 100.0%;">Hospital name: ProMedica<br> Number of COVID patients: 19<br> Number of ICU patients: 9</div>`)[0];
+            popup_d762ca55e1b04bc291387d0439da0fdf.setContent(html_27257ce5b26749aeafe7a0fe49e0e293);
         
 
-        circle_b7f3baec396749629772f5118b4bda1a.bindPopup(popup_0cbf279c397341c29cf9c177c1937f10)
+        circle_d49b0c15f9db4851b5cf7fd404a44266.bindPopup(popup_d762ca55e1b04bc291387d0439da0fdf)
         ;
 
         
     
     
-            var circle_1fe4516378c647cba1955a11fd37774f = L.circle(
+            var circle_61a2b6c0cae2437ba12acb3a107e2d60 = L.circle(
                 [41.9352768, -85.6479257],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3886.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3886.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_fd53d63d1fb443408eb00ad77fdda3b2 = L.popup({"maxWidth": "100%"});
+        var popup_31429e4a47da457aba84e57c4e31b9cc = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_989ebfd551d64526838035bc23e01add = $(`<div id="html_989ebfd551d64526838035bc23e01add" style="width: 100.0%; height: 100.0%;">Three Rivers Health</div>`)[0];
-            popup_fd53d63d1fb443408eb00ad77fdda3b2.setContent(html_989ebfd551d64526838035bc23e01add);
+            var html_fe287078cea640b496026e0e7a356c61 = $(`<div id="html_fe287078cea640b496026e0e7a356c61" style="width: 100.0%; height: 100.0%;">Hospital name: Three Rivers Health<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_31429e4a47da457aba84e57c4e31b9cc.setContent(html_fe287078cea640b496026e0e7a356c61);
         
 
-        circle_1fe4516378c647cba1955a11fd37774f.bindPopup(popup_fd53d63d1fb443408eb00ad77fdda3b2)
+        circle_61a2b6c0cae2437ba12acb3a107e2d60.bindPopup(popup_31429e4a47da457aba84e57c4e31b9cc)
         ;
 
         
     
     
-            var circle_92aba73b80134d14b089e10e0a11de21 = L.circle(
+            var circle_ce0449648b134065a1bf0cf005ee8e26 = L.circle(
                 [42.3635022, -83.07581019999999],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3956.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3956.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_66c527ff8b3045b993d9e1192d664ba5 = L.popup({"maxWidth": "100%"});
+        var popup_3b87481c38df40ab80b9ff04d321f488 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_b4dc587c52c14b4ea5296e2a63ca178a = $(`<div id="html_b4dc587c52c14b4ea5296e2a63ca178a" style="width: 100.0%; height: 100.0%;">Henry Ford Health System</div>`)[0];
-            popup_66c527ff8b3045b993d9e1192d664ba5.setContent(html_b4dc587c52c14b4ea5296e2a63ca178a);
+            var html_0ddb0d3f01144ffb865624ac5874e785 = $(`<div id="html_0ddb0d3f01144ffb865624ac5874e785" style="width: 100.0%; height: 100.0%;">Hospital name: Henry Ford Health System<br> Number of COVID patients: 23<br> Number of ICU patients: 6</div>`)[0];
+            popup_3b87481c38df40ab80b9ff04d321f488.setContent(html_0ddb0d3f01144ffb865624ac5874e785);
         
 
-        circle_92aba73b80134d14b089e10e0a11de21.bindPopup(popup_66c527ff8b3045b993d9e1192d664ba5)
+        circle_ce0449648b134065a1bf0cf005ee8e26.bindPopup(popup_3b87481c38df40ab80b9ff04d321f488)
         ;
 
         
     
     
-            var circle_a1323ee3f6ef49a09a6761736bf3b483 = L.circle(
+            var circle_4bcbf5f175d84889812ec47545aab08b = L.circle(
                 [42.3543741, -83.0562734],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3962.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3962.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_971effc348d84f36976cfd7cc618f1c4 = L.popup({"maxWidth": "100%"});
+        var popup_bde17d63886a452c81e0421f7be5c830 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_bce100d87afb43c4ba976dafd2fdd35d = $(`<div id="html_bce100d87afb43c4ba976dafd2fdd35d" style="width: 100.0%; height: 100.0%;">Detroit Medical Center</div>`)[0];
-            popup_971effc348d84f36976cfd7cc618f1c4.setContent(html_bce100d87afb43c4ba976dafd2fdd35d);
+            var html_cf9063edb05340f490b1c2b80e6f6c7b = $(`<div id="html_cf9063edb05340f490b1c2b80e6f6c7b" style="width: 100.0%; height: 100.0%;">Hospital name: Detroit Medical Center<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_bde17d63886a452c81e0421f7be5c830.setContent(html_cf9063edb05340f490b1c2b80e6f6c7b);
         
 
-        circle_a1323ee3f6ef49a09a6761736bf3b483.bindPopup(popup_971effc348d84f36976cfd7cc618f1c4)
+        circle_4bcbf5f175d84889812ec47545aab08b.bindPopup(popup_bde17d63886a452c81e0421f7be5c830)
         ;
 
         
     
     
-            var circle_dc6f301ef9154480adbfc0a0145ea2db = L.circle(
+            var circle_8aa0c56fb35946bfa67d6685130f6165 = L.circle(
                 [42.4984276, -83.08378069999999],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3999.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3999.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_3501147ac64645a883d15b81d31e1c80 = L.popup({"maxWidth": "100%"});
+        var popup_275771b65d4c49b085e3d41c103753e4 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_bae344c71a6940f8812839e30b54ad78 = $(`<div id="html_bae344c71a6940f8812839e30b54ad78" style="width: 100.0%; height: 100.0%;">Ascension</div>`)[0];
-            popup_3501147ac64645a883d15b81d31e1c80.setContent(html_bae344c71a6940f8812839e30b54ad78);
+            var html_dd61ee15290349569604fc4284fc125c = $(`<div id="html_dd61ee15290349569604fc4284fc125c" style="width: 100.0%; height: 100.0%;">Hospital name: Ascension<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_275771b65d4c49b085e3d41c103753e4.setContent(html_dd61ee15290349569604fc4284fc125c);
         
 
-        circle_dc6f301ef9154480adbfc0a0145ea2db.bindPopup(popup_3501147ac64645a883d15b81d31e1c80)
+        circle_8aa0c56fb35946bfa67d6685130f6165.bindPopup(popup_275771b65d4c49b085e3d41c103753e4)
         ;
 
         
     
     
-            var circle_4bb2601c4241436c9d032fd62b904067 = L.circle(
+            var circle_f558d70c4c014e52a0619b1793368b72 = L.circle(
                 [41.8722716, -85.19469629999999],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4059.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4059.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_610fb569aff646d69301727108f41dbc = L.popup({"maxWidth": "100%"});
+        var popup_23144fad598041d7a30eb3fe64001fe4 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_a6bdda433bd241f0b4369c26ab075d1e = $(`<div id="html_a6bdda433bd241f0b4369c26ab075d1e" style="width: 100.0%; height: 100.0%;">Bronson</div>`)[0];
-            popup_610fb569aff646d69301727108f41dbc.setContent(html_a6bdda433bd241f0b4369c26ab075d1e);
+            var html_7254b8001a54422ea952f2db30bb1938 = $(`<div id="html_7254b8001a54422ea952f2db30bb1938" style="width: 100.0%; height: 100.0%;">Hospital name: Bronson<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_23144fad598041d7a30eb3fe64001fe4.setContent(html_7254b8001a54422ea952f2db30bb1938);
         
 
-        circle_4bb2601c4241436c9d032fd62b904067.bindPopup(popup_610fb569aff646d69301727108f41dbc)
+        circle_f558d70c4c014e52a0619b1793368b72.bindPopup(popup_23144fad598041d7a30eb3fe64001fe4)
         ;
 
         
     
     
-            var circle_074928c88ccb49e08e4bacd5f34dab44 = L.circle(
+            var circle_34c171b6e1ea4df6aba07faa6d820c02 = L.circle(
                 [43.215921, -85.073668],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4062.0000000000005, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4062.0000000000005, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_b4afe39e0d264bc3bae5c20cfad497ee = L.popup({"maxWidth": "100%"});
+        var popup_46052fc9f1be4fd297e7339fe2032906 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_bc3fba92ca694a5caf71cca789de0bf8 = $(`<div id="html_bc3fba92ca694a5caf71cca789de0bf8" style="width: 100.0%; height: 100.0%;">Sheridan Community Hospital</div>`)[0];
-            popup_b4afe39e0d264bc3bae5c20cfad497ee.setContent(html_bc3fba92ca694a5caf71cca789de0bf8);
+            var html_2c2679b4b40245ad9620d276c24fe4e0 = $(`<div id="html_2c2679b4b40245ad9620d276c24fe4e0" style="width: 100.0%; height: 100.0%;">Hospital name: Sheridan Community Hospital<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_46052fc9f1be4fd297e7339fe2032906.setContent(html_2c2679b4b40245ad9620d276c24fe4e0);
         
 
-        circle_074928c88ccb49e08e4bacd5f34dab44.bindPopup(popup_b4afe39e0d264bc3bae5c20cfad497ee)
+        circle_34c171b6e1ea4df6aba07faa6d820c02.bindPopup(popup_46052fc9f1be4fd297e7339fe2032906)
         ;
 
         
     
     
-            var circle_76c59b0203254a2f94e9e3f3a8e90a8d = L.circle(
+            var circle_2755ca1d2ce941f793d2c4b3cc6063ce = L.circle(
                 [42.4349064, -83.4278728],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4238.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4238.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_5ac8911bba714bdd83df771c20e98069 = L.popup({"maxWidth": "100%"});
+        var popup_d6ed1beb01ae4a79a1e6f8c04524f379 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_02e8c57cd75841e38083699daa708b35 = $(`<div id="html_02e8c57cd75841e38083699daa708b35" style="width: 100.0%; height: 100.0%;">Trinity</div>`)[0];
-            popup_5ac8911bba714bdd83df771c20e98069.setContent(html_02e8c57cd75841e38083699daa708b35);
+            var html_8bfccc1099604c29bd23c6c6312e4f4f = $(`<div id="html_8bfccc1099604c29bd23c6c6312e4f4f" style="width: 100.0%; height: 100.0%;">Hospital name: Trinity<br> Number of COVID patients: 129<br> Number of ICU patients: 37</div>`)[0];
+            popup_d6ed1beb01ae4a79a1e6f8c04524f379.setContent(html_8bfccc1099604c29bd23c6c6312e4f4f);
         
 
-        circle_76c59b0203254a2f94e9e3f3a8e90a8d.bindPopup(popup_5ac8911bba714bdd83df771c20e98069)
+        circle_2755ca1d2ce941f793d2c4b3cc6063ce.bindPopup(popup_d6ed1beb01ae4a79a1e6f8c04524f379)
         ;
 
         
     
     
-            var circle_b8f0ace594dd42069386af7e52940419 = L.circle(
+            var circle_ee55bb43a40b40d0acdd78bce7faee25 = L.circle(
                 [43.0507132, -86.22921029999999],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4243.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4243.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_2281a5195c304923a7a6b491833ba27d = L.popup({"maxWidth": "100%"});
+        var popup_210774e5e3124ba79f8b9ef320890cb3 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_8dfd945234484f0ca2e1a37fb67a46e1 = $(`<div id="html_8dfd945234484f0ca2e1a37fb67a46e1" style="width: 100.0%; height: 100.0%;">North Ottawa Community Hosp</div>`)[0];
-            popup_2281a5195c304923a7a6b491833ba27d.setContent(html_8dfd945234484f0ca2e1a37fb67a46e1);
+            var html_f912f6ef97a342e08d12d9482dba9c4e = $(`<div id="html_f912f6ef97a342e08d12d9482dba9c4e" style="width: 100.0%; height: 100.0%;">Hospital name: North Ottawa Community Hosp<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_210774e5e3124ba79f8b9ef320890cb3.setContent(html_f912f6ef97a342e08d12d9482dba9c4e);
         
 
-        circle_b8f0ace594dd42069386af7e52940419.bindPopup(popup_2281a5195c304923a7a6b491833ba27d)
+        circle_ee55bb43a40b40d0acdd78bce7faee25.bindPopup(popup_210774e5e3124ba79f8b9ef320890cb3)
         ;
 
         
     
     
-            var circle_584e1ad4cf084eb6a7a1aaf9e09d3201 = L.circle(
+            var circle_3794f8b00e124dfe820870876525a4d2 = L.circle(
                 [43.0058489, -84.17980469999999],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4318.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4318.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_49d12d9319344e42b1698769afc8ccec = L.popup({"maxWidth": "100%"});
+        var popup_d27728cb59a24548b2d91d95c921ad40 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_c5e169921a38478a99a671d4a1b85d0e = $(`<div id="html_c5e169921a38478a99a671d4a1b85d0e" style="width: 100.0%; height: 100.0%;">Memorial Healthcare</div>`)[0];
-            popup_49d12d9319344e42b1698769afc8ccec.setContent(html_c5e169921a38478a99a671d4a1b85d0e);
+            var html_84f718562fed4d7d914e9bd4ffbe8cfb = $(`<div id="html_84f718562fed4d7d914e9bd4ffbe8cfb" style="width: 100.0%; height: 100.0%;">Hospital name: Memorial Healthcare<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_d27728cb59a24548b2d91d95c921ad40.setContent(html_84f718562fed4d7d914e9bd4ffbe8cfb);
         
 
-        circle_584e1ad4cf084eb6a7a1aaf9e09d3201.bindPopup(popup_49d12d9319344e42b1698769afc8ccec)
+        circle_3794f8b00e124dfe820870876525a4d2.bindPopup(popup_d27728cb59a24548b2d91d95c921ad40)
         ;
 
         
     
     
-            var circle_a2b94d69c2844d099d3ad6a0420b4202 = L.circle(
+            var circle_6729bfbb99c54d978c53f2629159e3d1 = L.circle(
                 [42.5075088, -83.00411559999999],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4387.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4387.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_36d05626b5b5471f9210fff812d9a014 = L.popup({"maxWidth": "100%"});
+        var popup_7382aeab587b4038a243c8326577e5b5 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_15f31f67d8a94cc8b1234d553586e192 = $(`<div id="html_15f31f67d8a94cc8b1234d553586e192" style="width: 100.0%; height: 100.0%;">Prime Health</div>`)[0];
-            popup_36d05626b5b5471f9210fff812d9a014.setContent(html_15f31f67d8a94cc8b1234d553586e192);
+            var html_abe9007b39dc4a4a9331670a5612ea23 = $(`<div id="html_abe9007b39dc4a4a9331670a5612ea23" style="width: 100.0%; height: 100.0%;">Hospital name: Prime Health<br> Number of COVID patients: 4<br> Number of ICU patients: 0</div>`)[0];
+            popup_7382aeab587b4038a243c8326577e5b5.setContent(html_abe9007b39dc4a4a9331670a5612ea23);
         
 
-        circle_a2b94d69c2844d099d3ad6a0420b4202.bindPopup(popup_36d05626b5b5471f9210fff812d9a014)
+        circle_6729bfbb99c54d978c53f2629159e3d1.bindPopup(popup_7382aeab587b4038a243c8326577e5b5)
         ;
 
         
     
     
-            var circle_5fdf7450ac9f4fdbb9783e024de10ddb = L.circle(
+            var circle_40e02a4babad44a5a31eb23ed8d9c70a = L.circle(
                 [41.9120432, -84.633113],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4477.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4477.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_ec16677624f042b6b7d8d4b887d4338e = L.popup({"maxWidth": "100%"});
+        var popup_7e61478e4f6942909af14644f8908831 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_a3201c6a426548888181cbcc0a0092ac = $(`<div id="html_a3201c6a426548888181cbcc0a0092ac" style="width: 100.0%; height: 100.0%;">Hillsdale Hospital</div>`)[0];
-            popup_ec16677624f042b6b7d8d4b887d4338e.setContent(html_a3201c6a426548888181cbcc0a0092ac);
+            var html_1de4cc1e6fb14b85b12640052dab16ea = $(`<div id="html_1de4cc1e6fb14b85b12640052dab16ea" style="width: 100.0%; height: 100.0%;">Hospital name: Hillsdale Hospital<br> Number of COVID patients: 3<br> Number of ICU patients: 1</div>`)[0];
+            popup_7e61478e4f6942909af14644f8908831.setContent(html_1de4cc1e6fb14b85b12640052dab16ea);
         
 
-        circle_5fdf7450ac9f4fdbb9783e024de10ddb.bindPopup(popup_ec16677624f042b6b7d8d4b887d4338e)
+        circle_40e02a4babad44a5a31eb23ed8d9c70a.bindPopup(popup_7e61478e4f6942909af14644f8908831)
         ;
 
         
     
     
-            var circle_a1448ff6fea94032b0fb9beefe7a6f03 = L.circle(
+            var circle_0118742c614b4e7a91663faf3724b874 = L.circle(
                 [42.63423299999999, -83.3092325],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4492.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4492.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_982e13199135435aa22bdad30e4e2b68 = L.popup({"maxWidth": "100%"});
+        var popup_0d331018b6934222a0614b3160c3870e = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_2d13d0009c2845e7837b5035f07eed93 = $(`<div id="html_2d13d0009c2845e7837b5035f07eed93" style="width: 100.0%; height: 100.0%;">Pontiac General Hospital</div>`)[0];
-            popup_982e13199135435aa22bdad30e4e2b68.setContent(html_2d13d0009c2845e7837b5035f07eed93);
+            var html_446713a016ae43b99f1b3545841cd8a9 = $(`<div id="html_446713a016ae43b99f1b3545841cd8a9" style="width: 100.0%; height: 100.0%;">Hospital name: Pontiac General Hospital<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_0d331018b6934222a0614b3160c3870e.setContent(html_446713a016ae43b99f1b3545841cd8a9);
         
 
-        circle_a1448ff6fea94032b0fb9beefe7a6f03.bindPopup(popup_982e13199135435aa22bdad30e4e2b68)
+        circle_0118742c614b4e7a91663faf3724b874.bindPopup(popup_0d331018b6934222a0614b3160c3870e)
         ;
 
         
     
     
-            var circle_7cec0895ffc84455b0ef1d5d360b89b1 = L.circle(
+            var circle_459ba53a086c4f628cae48eb299ae7e6 = L.circle(
                 [42.3314999, -83.1135654],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4676.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4676.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_ac6730d9e45a463eb31002a2dfa5d43f = L.popup({"maxWidth": "100%"});
+        var popup_41ac8585477449cfba1ad50c6c12c471 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_70e730d39f18404497da06893543accf = $(`<div id="html_70e730d39f18404497da06893543accf" style="width: 100.0%; height: 100.0%;">Covenant</div>`)[0];
-            popup_ac6730d9e45a463eb31002a2dfa5d43f.setContent(html_70e730d39f18404497da06893543accf);
+            var html_5b00202c4ca342f3b617eee406572221 = $(`<div id="html_5b00202c4ca342f3b617eee406572221" style="width: 100.0%; height: 100.0%;">Hospital name: Covenant<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_41ac8585477449cfba1ad50c6c12c471.setContent(html_5b00202c4ca342f3b617eee406572221);
         
 
-        circle_7cec0895ffc84455b0ef1d5d360b89b1.bindPopup(popup_ac6730d9e45a463eb31002a2dfa5d43f)
+        circle_459ba53a086c4f628cae48eb299ae7e6.bindPopup(popup_41ac8585477449cfba1ad50c6c12c471)
         ;
 
         
     
     
-            var circle_ffc619900c8f463280cb870ca1e98e3c = L.circle(
+            var circle_fb09305ae44b48aaa467bf02a73112e9 = L.circle(
                 [43.0143291, -83.7329937],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4714.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4714.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_0348fa843107465d9706d8635c1d7bd8 = L.popup({"maxWidth": "100%"});
+        var popup_2da0ae7c02584b53a7bba553713f6fd7 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_f9a0475380f94ae49d826f630d1a6737 = $(`<div id="html_f9a0475380f94ae49d826f630d1a6737" style="width: 100.0%; height: 100.0%;">McLaren</div>`)[0];
-            popup_0348fa843107465d9706d8635c1d7bd8.setContent(html_f9a0475380f94ae49d826f630d1a6737);
+            var html_7bb76e4a9d574ca594a269823db86e82 = $(`<div id="html_7bb76e4a9d574ca594a269823db86e82" style="width: 100.0%; height: 100.0%;">Hospital name: McLaren<br> Number of COVID patients: 2<br> Number of ICU patients: 0</div>`)[0];
+            popup_2da0ae7c02584b53a7bba553713f6fd7.setContent(html_7bb76e4a9d574ca594a269823db86e82);
         
 
-        circle_ffc619900c8f463280cb870ca1e98e3c.bindPopup(popup_0348fa843107465d9706d8635c1d7bd8)
+        circle_fb09305ae44b48aaa467bf02a73112e9.bindPopup(popup_2da0ae7c02584b53a7bba553713f6fd7)
         ;
 
         
     
     
-            var circle_21247749d7e6422ba66cd0db81069f7e = L.circle(
+            var circle_cc7579d64e5a4b3e87c374bc781972e9 = L.circle(
                 [42.3904977, -83.3738935],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4755.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4755.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_316fc92a37b74e3cb18e72c608c13455 = L.popup({"maxWidth": "100%"});
+        var popup_a691f45d49144a5a8b46efaff6cbfcba = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_fad103f9327d4624b7220b3e912ceb63 = $(`<div id="html_fad103f9327d4624b7220b3e912ceb63" style="width: 100.0%; height: 100.0%;">Spectrum</div>`)[0];
-            popup_316fc92a37b74e3cb18e72c608c13455.setContent(html_fad103f9327d4624b7220b3e912ceb63);
+            var html_96bed850e1534843b760bb922f31060f = $(`<div id="html_96bed850e1534843b760bb922f31060f" style="width: 100.0%; height: 100.0%;">Hospital name: Spectrum<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_a691f45d49144a5a8b46efaff6cbfcba.setContent(html_96bed850e1534843b760bb922f31060f);
         
 
-        circle_21247749d7e6422ba66cd0db81069f7e.bindPopup(popup_316fc92a37b74e3cb18e72c608c13455)
+        circle_cc7579d64e5a4b3e87c374bc781972e9.bindPopup(popup_a691f45d49144a5a8b46efaff6cbfcba)
         ;
 
         
     
     
-            var circle_3ee23b538e0e4055bb0a0731b82f1a5c = L.circle(
+            var circle_4f537615135d475dae463cd1bf289231 = L.circle(
                 [42.273725, -84.9569467],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4810.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4810.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_2338ece3324e41378729fd602a39f6a4 = L.popup({"maxWidth": "100%"});
+        var popup_9008f58e6b1d4343b16c7902568ed9c5 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_07b04f78e70c47bb9eb0db74c1a34050 = $(`<div id="html_07b04f78e70c47bb9eb0db74c1a34050" style="width: 100.0%; height: 100.0%;">Oaklawn Hospital</div>`)[0];
-            popup_2338ece3324e41378729fd602a39f6a4.setContent(html_07b04f78e70c47bb9eb0db74c1a34050);
+            var html_9b21776f3dd64582a983e436209c9a32 = $(`<div id="html_9b21776f3dd64582a983e436209c9a32" style="width: 100.0%; height: 100.0%;">Hospital name: Oaklawn Hospital<br> Number of COVID patients: 69<br> Number of ICU patients: 18</div>`)[0];
+            popup_9008f58e6b1d4343b16c7902568ed9c5.setContent(html_9b21776f3dd64582a983e436209c9a32);
         
 
-        circle_3ee23b538e0e4055bb0a0731b82f1a5c.bindPopup(popup_2338ece3324e41378729fd602a39f6a4)
+        circle_4f537615135d475dae463cd1bf289231.bindPopup(popup_9008f58e6b1d4343b16c7902568ed9c5)
         ;
 
         
     
     
-            var circle_190467185c56406ab33091f63e6dc4d8 = L.circle(
+            var circle_70d37fe6b5ad472caa293fb875a4c410 = L.circle(
                 [43.33247859999999, -83.08143079999999],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4970.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4970.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_e567bee8c6a848d1bbc1f8727ba7628e = L.popup({"maxWidth": "100%"});
+        var popup_53b1fb71891b402785290787e2b7c1e7 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_c066164f4ae94fde820e9ab47151fef1 = $(`<div id="html_c066164f4ae94fde820e9ab47151fef1" style="width: 100.0%; height: 100.0%;">Marlette Regional Hospital</div>`)[0];
-            popup_e567bee8c6a848d1bbc1f8727ba7628e.setContent(html_c066164f4ae94fde820e9ab47151fef1);
+            var html_22b8c88505694882bbe3fdcdea42a396 = $(`<div id="html_22b8c88505694882bbe3fdcdea42a396" style="width: 100.0%; height: 100.0%;">Hospital name: Marlette Regional Hospital<br> Number of COVID patients: 4<br> Number of ICU patients: 3</div>`)[0];
+            popup_53b1fb71891b402785290787e2b7c1e7.setContent(html_22b8c88505694882bbe3fdcdea42a396);
         
 
-        circle_190467185c56406ab33091f63e6dc4d8.bindPopup(popup_e567bee8c6a848d1bbc1f8727ba7628e)
+        circle_70d37fe6b5ad472caa293fb875a4c410.bindPopup(popup_53b1fb71891b402785290787e2b7c1e7)
         ;
 
         
     
     
-            var circle_2f6f433303e74ef1b5b412a425e18e8e = L.circle(
+            var circle_137f6091d7de4491a78480f1a99f38c7 = L.circle(
                 [44.7311836, -85.18444459999999],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_94a681dd3be54434abb7323337cc96b4 = L.popup({"maxWidth": "100%"});
+        var popup_0d917195754c4376b2673cc6c6a67d9f = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_338f74d52d1e45ca85ce11042e7c898d = $(`<div id="html_338f74d52d1e45ca85ce11042e7c898d" style="width: 100.0%; height: 100.0%;">Kalkaska Memorial Health Center</div>`)[0];
-            popup_94a681dd3be54434abb7323337cc96b4.setContent(html_338f74d52d1e45ca85ce11042e7c898d);
+            var html_1b0270ced2d74fca89b94905230c52fa = $(`<div id="html_1b0270ced2d74fca89b94905230c52fa" style="width: 100.0%; height: 100.0%;">Hospital name: Kalkaska Memorial Health Center<br> Number of COVID patients: 1<br> Number of ICU patients: 0</div>`)[0];
+            popup_0d917195754c4376b2673cc6c6a67d9f.setContent(html_1b0270ced2d74fca89b94905230c52fa);
         
 
-        circle_2f6f433303e74ef1b5b412a425e18e8e.bindPopup(popup_94a681dd3be54434abb7323337cc96b4)
+        circle_137f6091d7de4491a78480f1a99f38c7.bindPopup(popup_0d917195754c4376b2673cc6c6a67d9f)
         ;
 
         
     
     
-            var circle_c890bf756cff4216957ed54f55acb8c2 = L.circle(
+            var circle_390a041ae7be424485184b1bbe015e15 = L.circle(
                 [43.8343728, -83.2783501],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5129.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5129.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_a12c0eccec2b4eab8840da77a0d41c76 = L.popup({"maxWidth": "100%"});
+        var popup_9a834c3305bf4254a2ec5841a594b671 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_20b3035ad9da4f59b6330454589fafe8 = $(`<div id="html_20b3035ad9da4f59b6330454589fafe8" style="width: 100.0%; height: 100.0%;">Scheurer Hospital</div>`)[0];
-            popup_a12c0eccec2b4eab8840da77a0d41c76.setContent(html_20b3035ad9da4f59b6330454589fafe8);
+            var html_dbd287b952674c75a7c52bd936a4e7ea = $(`<div id="html_dbd287b952674c75a7c52bd936a4e7ea" style="width: 100.0%; height: 100.0%;">Hospital name: Scheurer Hospital<br> Number of COVID patients: 14<br> Number of ICU patients: 5</div>`)[0];
+            popup_9a834c3305bf4254a2ec5841a594b671.setContent(html_dbd287b952674c75a7c52bd936a4e7ea);
         
 
-        circle_c890bf756cff4216957ed54f55acb8c2.bindPopup(popup_a12c0eccec2b4eab8840da77a0d41c76)
+        circle_390a041ae7be424485184b1bbe015e15.bindPopup(popup_9a834c3305bf4254a2ec5841a594b671)
         ;
 
         
     
     
-            var circle_a9557c81d7c64c139556c1fbf01507f4 = L.circle(
+            var circle_b401d20b6cab4a9d82d78dd7df127b3b = L.circle(
                 [41.7950424, -85.4073887],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5150.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5150.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_d77a1500ddef433491209a39c1072c37 = L.popup({"maxWidth": "100%"});
+        var popup_99ebcd1fc33f4215a07f6d3c8bf3852c = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_a0e0866d9d204965a064f04a0d536c04 = $(`<div id="html_a0e0866d9d204965a064f04a0d536c04" style="width: 100.0%; height: 100.0%;">Sturgis Hospital</div>`)[0];
-            popup_d77a1500ddef433491209a39c1072c37.setContent(html_a0e0866d9d204965a064f04a0d536c04);
+            var html_12758992c06644fe93d05812b007b41d = $(`<div id="html_12758992c06644fe93d05812b007b41d" style="width: 100.0%; height: 100.0%;">Hospital name: Sturgis Hospital<br> Number of COVID patients: 7<br> Number of ICU patients: 2</div>`)[0];
+            popup_99ebcd1fc33f4215a07f6d3c8bf3852c.setContent(html_12758992c06644fe93d05812b007b41d);
         
 
-        circle_a9557c81d7c64c139556c1fbf01507f4.bindPopup(popup_d77a1500ddef433491209a39c1072c37)
+        circle_b401d20b6cab4a9d82d78dd7df127b3b.bindPopup(popup_99ebcd1fc33f4215a07f6d3c8bf3852c)
         ;
 
         
     
     
-            var circle_2985696e7d7144fca649878f8434763f = L.circle(
+            var circle_e8d68a7930c84653a7a2bc1d61c6c3b8 = L.circle(
                 [42.7337155, -84.5351111],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5209.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5209.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_c8a1ab7e09c94d0db3259a0fad91e79e = L.popup({"maxWidth": "100%"});
+        var popup_4de02eb8053a448ca204b684a03de611 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_998f2b2920d94bd8be6269663a534f1b = $(`<div id="html_998f2b2920d94bd8be6269663a534f1b" style="width: 100.0%; height: 100.0%;">Sparrow Health System</div>`)[0];
-            popup_c8a1ab7e09c94d0db3259a0fad91e79e.setContent(html_998f2b2920d94bd8be6269663a534f1b);
+            var html_36e45a22572547a0bed42badf1652201 = $(`<div id="html_36e45a22572547a0bed42badf1652201" style="width: 100.0%; height: 100.0%;">Hospital name: Sparrow Health System<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_4de02eb8053a448ca204b684a03de611.setContent(html_36e45a22572547a0bed42badf1652201);
         
 
-        circle_2985696e7d7144fca649878f8434763f.bindPopup(popup_c8a1ab7e09c94d0db3259a0fad91e79e)
+        circle_e8d68a7930c84653a7a2bc1d61c6c3b8.bindPopup(popup_4de02eb8053a448ca204b684a03de611)
         ;
 
         
     
     
-            var circle_f8f69aacd2c74a489386af3e337e0cbd = L.circle(
+            var circle_9552fc597f554514badc47eba20882b0 = L.circle(
                 [42.7751338, -86.1145293],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5270.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5270.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_d0a36d2ff88440a2a4e59216c8b43f17 = L.popup({"maxWidth": "100%"});
+        var popup_7134568e5711475d98ea17e4bd10be15 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_97607f03c8d942f89d5e433a8260afcc = $(`<div id="html_97607f03c8d942f89d5e433a8260afcc" style="width: 100.0%; height: 100.0%;">Holland Community Hospital</div>`)[0];
-            popup_d0a36d2ff88440a2a4e59216c8b43f17.setContent(html_97607f03c8d942f89d5e433a8260afcc);
+            var html_20650ec10f6e4cb8adb7631947f59a5f = $(`<div id="html_20650ec10f6e4cb8adb7631947f59a5f" style="width: 100.0%; height: 100.0%;">Hospital name: Holland Community Hospital<br> Number of COVID patients: 6<br> Number of ICU patients: 4</div>`)[0];
+            popup_7134568e5711475d98ea17e4bd10be15.setContent(html_20650ec10f6e4cb8adb7631947f59a5f);
         
 
-        circle_f8f69aacd2c74a489386af3e337e0cbd.bindPopup(popup_d0a36d2ff88440a2a4e59216c8b43f17)
+        circle_9552fc597f554514badc47eba20882b0.bindPopup(popup_7134568e5711475d98ea17e4bd10be15)
         ;
 
         
     
     
-            var circle_7b8377a39abd412f9150d5770420a490 = L.circle(
+            var circle_7a18f84a51a3464fb1caaba2c57ba361 = L.circle(
                 [46.4247854, -86.6252839],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5286.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5286.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_e6e0f8151e5a4b53a39b21576a96b97c = L.popup({"maxWidth": "100%"});
+        var popup_068a34bc49d84512a08468303eec6377 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_0e2ce71080564dacb09c0765d416ed42 = $(`<div id="html_0e2ce71080564dacb09c0765d416ed42" style="width: 100.0%; height: 100.0%;">Munising Memorial Hospital</div>`)[0];
-            popup_e6e0f8151e5a4b53a39b21576a96b97c.setContent(html_0e2ce71080564dacb09c0765d416ed42);
+            var html_7537ff538b554c82b538425a9b2f0019 = $(`<div id="html_7537ff538b554c82b538425a9b2f0019" style="width: 100.0%; height: 100.0%;">Hospital name: Munising Memorial Hospital<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_068a34bc49d84512a08468303eec6377.setContent(html_7537ff538b554c82b538425a9b2f0019);
         
 
-        circle_7b8377a39abd412f9150d5770420a490.bindPopup(popup_e6e0f8151e5a4b53a39b21576a96b97c)
+        circle_7a18f84a51a3464fb1caaba2c57ba361.bindPopup(popup_068a34bc49d84512a08468303eec6377)
         ;
 
         
     
     
-            var circle_5ca90b05bd594d1ca3db7e2897948c79 = L.circle(
+            var circle_497bcc09f2734682a25bda52a17ae600 = L.circle(
                 [46.731815, -88.42480499999999],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5300.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5300.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_1958851fa28b46aab22f345d68735b2b = L.popup({"maxWidth": "100%"});
+        var popup_541280c1c7ff4a119a2d1ee7c518a404 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_425f3709e93a411181732bdba5b21c37 = $(`<div id="html_425f3709e93a411181732bdba5b21c37" style="width: 100.0%; height: 100.0%;">Baraga County Memorial Hospital</div>`)[0];
-            popup_1958851fa28b46aab22f345d68735b2b.setContent(html_425f3709e93a411181732bdba5b21c37);
+            var html_59f109a813094dfa9008dd016ae73fb5 = $(`<div id="html_59f109a813094dfa9008dd016ae73fb5" style="width: 100.0%; height: 100.0%;">Hospital name: Baraga County Memorial Hospital<br> Number of COVID patients: 1<br> Number of ICU patients: 0</div>`)[0];
+            popup_541280c1c7ff4a119a2d1ee7c518a404.setContent(html_59f109a813094dfa9008dd016ae73fb5);
         
 
-        circle_5ca90b05bd594d1ca3db7e2897948c79.bindPopup(popup_1958851fa28b46aab22f345d68735b2b)
+        circle_497bcc09f2734682a25bda52a17ae600.bindPopup(popup_541280c1c7ff4a119a2d1ee7c518a404)
         ;
 
         
     
     
-            var circle_ffa79538c98c4ba08521c4ebce6bd580 = L.circle(
+            var circle_b15653c5560e485fbac7f5d160b28ba2 = L.circle(
                 [46.5431985, -87.4114733],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5313.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5313.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_2991df8cb6bb40d0b233e31ece37267d = L.popup({"maxWidth": "100%"});
+        var popup_f120d3cb9a954150baba16a05b0acc7d = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_6b89292781d74ddeb39dd8505d139f55 = $(`<div id="html_6b89292781d74ddeb39dd8505d139f55" style="width: 100.0%; height: 100.0%;">UP Health</div>`)[0];
-            popup_2991df8cb6bb40d0b233e31ece37267d.setContent(html_6b89292781d74ddeb39dd8505d139f55);
+            var html_f53633ea656b4ebc9b5d3e5b7252fd45 = $(`<div id="html_f53633ea656b4ebc9b5d3e5b7252fd45" style="width: 100.0%; height: 100.0%;">Hospital name: UP Health<br> Number of COVID patients: 0<br> Number of ICU patients: 1</div>`)[0];
+            popup_f120d3cb9a954150baba16a05b0acc7d.setContent(html_f53633ea656b4ebc9b5d3e5b7252fd45);
         
 
-        circle_ffa79538c98c4ba08521c4ebce6bd580.bindPopup(popup_2991df8cb6bb40d0b233e31ece37267d)
+        circle_b15653c5560e485fbac7f5d160b28ba2.bindPopup(popup_f120d3cb9a954150baba16a05b0acc7d)
         ;
 
         
     
     
-            var circle_95a9ba862bb34e75b14651ba9674e7cf = L.circle(
+            var circle_5a5c1543a3344dd9be653cf57563d0ed = L.circle(
                 [43.4237214, -82.83219110000002],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5340.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5340.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_cde89f3886024c44847feef420983314 = L.popup({"maxWidth": "100%"});
+        var popup_247da8b56fd14eebb2602400deacfc10 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_dcfdcb30f5724d5da4760328f712e6fc = $(`<div id="html_dcfdcb30f5724d5da4760328f712e6fc" style="width: 100.0%; height: 100.0%;">McKenzie Memorial Hospital</div>`)[0];
-            popup_cde89f3886024c44847feef420983314.setContent(html_dcfdcb30f5724d5da4760328f712e6fc);
+            var html_fb8734effe0d4e97a2ae92a5f7d073bd = $(`<div id="html_fb8734effe0d4e97a2ae92a5f7d073bd" style="width: 100.0%; height: 100.0%;">Hospital name: McKenzie Memorial Hospital<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_247da8b56fd14eebb2602400deacfc10.setContent(html_fb8734effe0d4e97a2ae92a5f7d073bd);
         
 
-        circle_95a9ba862bb34e75b14651ba9674e7cf.bindPopup(popup_cde89f3886024c44847feef420983314)
+        circle_5a5c1543a3344dd9be653cf57563d0ed.bindPopup(popup_247da8b56fd14eebb2602400deacfc10)
         ;
 
         
     
     
-            var circle_8923f2244d6149c39a8d8010f5a470ac = L.circle(
+            var circle_1cf1055128b846cabd5173999a953c0e = L.circle(
                 [42.4644518, -83.26180190000001],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5375.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5375.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_93b8dce0dbe945fba1fab44271adb9e9 = L.popup({"maxWidth": "100%"});
+        var popup_e4f9c1d991fb4991a57e1156b8f4874e = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_9987b77ebb8743399807b8e018cc8632 = $(`<div id="html_9987b77ebb8743399807b8e018cc8632" style="width: 100.0%; height: 100.0%;">Straith Hospital</div>`)[0];
-            popup_93b8dce0dbe945fba1fab44271adb9e9.setContent(html_9987b77ebb8743399807b8e018cc8632);
+            var html_c072ba05eb5a4e08a710b09708176574 = $(`<div id="html_c072ba05eb5a4e08a710b09708176574" style="width: 100.0%; height: 100.0%;">Hospital name: Straith Hospital<br> Number of COVID patients: 5<br> Number of ICU patients: 1</div>`)[0];
+            popup_e4f9c1d991fb4991a57e1156b8f4874e.setContent(html_c072ba05eb5a4e08a710b09708176574);
         
 
-        circle_8923f2244d6149c39a8d8010f5a470ac.bindPopup(popup_93b8dce0dbe945fba1fab44271adb9e9)
+        circle_1cf1055128b846cabd5173999a953c0e.bindPopup(popup_e4f9c1d991fb4991a57e1156b8f4874e)
         ;
 
         
     
     
-            var circle_66080fc35cc748b1ba77e11c5ecfa1fb = L.circle(
+            var circle_88b5b7c948e6435fa0541cbd789bd79a = L.circle(
                 [42.2161722, -83.3553842],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5413.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5413.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_807fd85f074c4e02a2a4b67d913e4d0e = L.popup({"maxWidth": "100%"});
+        var popup_4b7c0e0d99ae45dbb515f6278a4440dc = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_784a749d07f04f0a8285d6278aa70ee8 = $(`<div id="html_784a749d07f04f0a8285d6278aa70ee8" style="width: 100.0%; height: 100.0%;">Metro</div>`)[0];
-            popup_807fd85f074c4e02a2a4b67d913e4d0e.setContent(html_784a749d07f04f0a8285d6278aa70ee8);
+            var html_191b4bd2419c4e4b98412d014231f06c = $(`<div id="html_191b4bd2419c4e4b98412d014231f06c" style="width: 100.0%; height: 100.0%;">Hospital name: Metro<br> Number of COVID patients: 8<br> Number of ICU patients: 2</div>`)[0];
+            popup_4b7c0e0d99ae45dbb515f6278a4440dc.setContent(html_191b4bd2419c4e4b98412d014231f06c);
         
 
-        circle_66080fc35cc748b1ba77e11c5ecfa1fb.bindPopup(popup_807fd85f074c4e02a2a4b67d913e4d0e)
+        circle_88b5b7c948e6435fa0541cbd789bd79a.bindPopup(popup_4b7c0e0d99ae45dbb515f6278a4440dc)
         ;
 
         
     
     
-            var circle_8756b0a578b143fcb341a33cdae27f79 = L.circle(
+            var circle_034413b2d2e24b62b52eb34934da52e9 = L.circle(
                 [45.7427923, -87.09630369999999],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5442.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5442.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_e4ce016652444ca3984b33d9b66c626e = L.popup({"maxWidth": "100%"});
+        var popup_95c01531f486493a935b9666ede4d615 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_ebaf5c5124a84af3ac4eacc0140ac5f6 = $(`<div id="html_ebaf5c5124a84af3ac4eacc0140ac5f6" style="width: 100.0%; height: 100.0%;">OSF St. Francis Hospital</div>`)[0];
-            popup_e4ce016652444ca3984b33d9b66c626e.setContent(html_ebaf5c5124a84af3ac4eacc0140ac5f6);
+            var html_0980a26607c84f93a8ae77dd212b8a22 = $(`<div id="html_0980a26607c84f93a8ae77dd212b8a22" style="width: 100.0%; height: 100.0%;">Hospital name: OSF St. Francis Hospital<br> Number of COVID patients: 1<br> Number of ICU patients: 0</div>`)[0];
+            popup_95c01531f486493a935b9666ede4d615.setContent(html_0980a26607c84f93a8ae77dd212b8a22);
         
 
-        circle_8756b0a578b143fcb341a33cdae27f79.bindPopup(popup_e4ce016652444ca3984b33d9b66c626e)
+        circle_034413b2d2e24b62b52eb34934da52e9.bindPopup(popup_95c01531f486493a935b9666ede4d615)
         ;
 
         
     
     
-            var circle_92218d46e4c24f619089af560acc039f = L.circle(
+            var circle_9d1b923f54b542278040d242e60f8713 = L.circle(
                 [43.5281974, -82.73416929999999],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5500.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5500.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_00736d24620b4978a3065b1a65c47618 = L.popup({"maxWidth": "100%"});
+        var popup_e84bef623f374880826a7484ad448d1e = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_8f535a2668084f53a78b22e0d04e8343 = $(`<div id="html_8f535a2668084f53a78b22e0d04e8343" style="width: 100.0%; height: 100.0%;">Deckerville Community Hospital</div>`)[0];
-            popup_00736d24620b4978a3065b1a65c47618.setContent(html_8f535a2668084f53a78b22e0d04e8343);
+            var html_98e32db591634589a39d8d6b7431092e = $(`<div id="html_98e32db591634589a39d8d6b7431092e" style="width: 100.0%; height: 100.0%;">Hospital name: Deckerville Community Hospital<br> Number of COVID patients: 1<br> Number of ICU patients: 0</div>`)[0];
+            popup_e84bef623f374880826a7484ad448d1e.setContent(html_98e32db591634589a39d8d6b7431092e);
         
 
-        circle_92218d46e4c24f619089af560acc039f.bindPopup(popup_00736d24620b4978a3065b1a65c47618)
+        circle_9d1b923f54b542278040d242e60f8713.bindPopup(popup_e84bef623f374880826a7484ad448d1e)
         ;
 
         
     
     
-            var circle_d8a55e3236974f2cb8f35866762f7888 = L.circle(
+            var circle_49aefcbd1b4b473ab119040c94959204 = L.circle(
                 [43.6040499, -83.18229079999999],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5521.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5521.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_5e0a55402cfa4563a24ab3d625f37a7d = L.popup({"maxWidth": "100%"});
+        var popup_99934aa158eb41cdbc039de8e7e937ec = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_dc1f0f049343447284631e172cf54d29 = $(`<div id="html_dc1f0f049343447284631e172cf54d29" style="width: 100.0%; height: 100.0%;">Hills and Dales General Hospital</div>`)[0];
-            popup_5e0a55402cfa4563a24ab3d625f37a7d.setContent(html_dc1f0f049343447284631e172cf54d29);
+            var html_51821a07d50c4cdfbeea7a3c35bdb92c = $(`<div id="html_51821a07d50c4cdfbeea7a3c35bdb92c" style="width: 100.0%; height: 100.0%;">Hospital name: Hills and Dales General Hospital<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_99934aa158eb41cdbc039de8e7e937ec.setContent(html_51821a07d50c4cdfbeea7a3c35bdb92c);
         
 
-        circle_d8a55e3236974f2cb8f35866762f7888.bindPopup(popup_5e0a55402cfa4563a24ab3d625f37a7d)
+        circle_49aefcbd1b4b473ab119040c94959204.bindPopup(popup_99934aa158eb41cdbc039de8e7e937ec)
         ;
 
         
     
     
-            var circle_c41a25d7c07040b7ae398d01ce70a3e1 = L.circle(
+            var circle_2e887b5836554ebf8b5cebc54371aba9 = L.circle(
                 [45.8098408, -88.0445283],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5571.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5571.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_eb2dedda09254f35b251fa9f8f34bbe7 = L.popup({"maxWidth": "100%"});
+        var popup_874947c608d641ea8c63001ae8106bbe = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_4dd352003a0f4a0fbb0a4aaca0036250 = $(`<div id="html_4dd352003a0f4a0fbb0a4aaca0036250" style="width: 100.0%; height: 100.0%;">Dickinson Memorial Health Care System</div>`)[0];
-            popup_eb2dedda09254f35b251fa9f8f34bbe7.setContent(html_4dd352003a0f4a0fbb0a4aaca0036250);
+            var html_1dcff14192b343f3927839565b92b3e2 = $(`<div id="html_1dcff14192b343f3927839565b92b3e2" style="width: 100.0%; height: 100.0%;">Hospital name: Dickinson Memorial Health Care System<br> Number of COVID patients: 22<br> Number of ICU patients: 1</div>`)[0];
+            popup_874947c608d641ea8c63001ae8106bbe.setContent(html_1dcff14192b343f3927839565b92b3e2);
         
 
-        circle_c41a25d7c07040b7ae398d01ce70a3e1.bindPopup(popup_eb2dedda09254f35b251fa9f8f34bbe7)
+        circle_2e887b5836554ebf8b5cebc54371aba9.bindPopup(popup_874947c608d641ea8c63001ae8106bbe)
         ;
 
         
     
     
-            var circle_44e118127c5b4953a61e74acf4af2a20 = L.circle(
+            var circle_66afa65b65fb44929b5037c7a8b23e11 = L.circle(
                 [45.9466777, -86.2761068],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5583.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5583.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_bd6f23ebb3ad494c9c35ea41e9b26cb9 = L.popup({"maxWidth": "100%"});
+        var popup_d2137ea6d37b4a4fb9f03d1d8c6c0f7f = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_ada1a43d136246479abcea4910d14cdd = $(`<div id="html_ada1a43d136246479abcea4910d14cdd" style="width: 100.0%; height: 100.0%;">Schoolcraft Memorial Hospital</div>`)[0];
-            popup_bd6f23ebb3ad494c9c35ea41e9b26cb9.setContent(html_ada1a43d136246479abcea4910d14cdd);
+            var html_9aa739090cf743868054a5096ca2118e = $(`<div id="html_9aa739090cf743868054a5096ca2118e" style="width: 100.0%; height: 100.0%;">Hospital name: Schoolcraft Memorial Hospital<br> Number of COVID patients: 35<br> Number of ICU patients: 6</div>`)[0];
+            popup_d2137ea6d37b4a4fb9f03d1d8c6c0f7f.setContent(html_9aa739090cf743868054a5096ca2118e);
         
 
-        circle_44e118127c5b4953a61e74acf4af2a20.bindPopup(popup_bd6f23ebb3ad494c9c35ea41e9b26cb9)
+        circle_66afa65b65fb44929b5037c7a8b23e11.bindPopup(popup_d2137ea6d37b4a4fb9f03d1d8c6c0f7f)
         ;
 
         
     
     
-            var circle_a942c88b4edc47c4b541f0a1c57246e7 = L.circle(
+            var circle_0a118f11b5d64254ad5394dbcea69337 = L.circle(
                 [42.49533479999999, -84.6584235],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5600.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5600.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_4f6ed538313341209d731cd2147bfd38 = L.popup({"maxWidth": "100%"});
+        var popup_4e661fa0c0cb4465adef940a6532b28e = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_6f9ef2b3aedb45b8b3173c79433e29ef = $(`<div id="html_6f9ef2b3aedb45b8b3173c79433e29ef" style="width: 100.0%; height: 100.0%;">Eaton Rapids Medical Center</div>`)[0];
-            popup_4f6ed538313341209d731cd2147bfd38.setContent(html_6f9ef2b3aedb45b8b3173c79433e29ef);
+            var html_6d71ddc6d1b943ebb18809dc729610ee = $(`<div id="html_6d71ddc6d1b943ebb18809dc729610ee" style="width: 100.0%; height: 100.0%;">Hospital name: Eaton Rapids Medical Center<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_4e661fa0c0cb4465adef940a6532b28e.setContent(html_6d71ddc6d1b943ebb18809dc729610ee);
         
 
-        circle_a942c88b4edc47c4b541f0a1c57246e7.bindPopup(popup_4f6ed538313341209d731cd2147bfd38)
+        circle_0a118f11b5d64254ad5394dbcea69337.bindPopup(popup_4e661fa0c0cb4465adef940a6532b28e)
         ;
 
         
     
     
-            var circle_8e396cd94c3c479cb435e39cd471036a = L.circle(
+            var circle_cf2c25589e4a419bbea1a7af60980f34 = L.circle(
                 [45.8907177, -84.7298751],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5600.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5600.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_d46ac3723390445cbcfc226dcdde398a = L.popup({"maxWidth": "100%"});
+        var popup_c0da31780f9a43fca5a96bfeabf429d4 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_3b4ff6d9bf0948ab9a406f417b5e31fe = $(`<div id="html_3b4ff6d9bf0948ab9a406f417b5e31fe" style="width: 100.0%; height: 100.0%;">Mackinac Straits Hospital</div>`)[0];
-            popup_d46ac3723390445cbcfc226dcdde398a.setContent(html_3b4ff6d9bf0948ab9a406f417b5e31fe);
+            var html_9abeec4a509c4288bfac400c391a6776 = $(`<div id="html_9abeec4a509c4288bfac400c391a6776" style="width: 100.0%; height: 100.0%;">Hospital name: Mackinac Straits Hospital<br> Number of COVID patients: 0<br> Number of ICU patients: 0</div>`)[0];
+            popup_c0da31780f9a43fca5a96bfeabf429d4.setContent(html_9abeec4a509c4288bfac400c391a6776);
         
 
-        circle_8e396cd94c3c479cb435e39cd471036a.bindPopup(popup_d46ac3723390445cbcfc226dcdde398a)
+        circle_cf2c25589e4a419bbea1a7af60980f34.bindPopup(popup_c0da31780f9a43fca5a96bfeabf429d4)
         ;
 
         
     
     
-            var circle_351bb2d24ed04105a04690d7cb466bdf = L.circle(
+            var circle_46fa3b0213264b9a9256f4659724c2be = L.circle(
                 [46.497886, -84.35074589999999],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5691.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5691.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_d6464185d227418dbc314c5838272a05 = L.popup({"maxWidth": "100%"});
+        var popup_1494753abbb0429ca578be53a0e7b930 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_f05149ab2148439d858279067a7b4581 = $(`<div id="html_f05149ab2148439d858279067a7b4581" style="width: 100.0%; height: 100.0%;">War Memorial Hospital</div>`)[0];
-            popup_d6464185d227418dbc314c5838272a05.setContent(html_f05149ab2148439d858279067a7b4581);
+            var html_ed0ad93639844d5e885f9630998d87db = $(`<div id="html_ed0ad93639844d5e885f9630998d87db" style="width: 100.0%; height: 100.0%;">Hospital name: War Memorial Hospital<br> Number of COVID patients: 1<br> Number of ICU patients: 0</div>`)[0];
+            popup_1494753abbb0429ca578be53a0e7b930.setContent(html_ed0ad93639844d5e885f9630998d87db);
         
 
-        circle_351bb2d24ed04105a04690d7cb466bdf.bindPopup(popup_d6464185d227418dbc314c5838272a05)
+        circle_46fa3b0213264b9a9256f4659724c2be.bindPopup(popup_1494753abbb0429ca578be53a0e7b930)
         ;
 
         
     
     
-            var circle_46495ea5174e409892614d4e5aaf12b7 = L.circle(
+            var circle_858d1a29c7144db481a880c827b546ec = L.circle(
                 [46.352985, -85.5156125],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5818.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5818.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_8b676073da6b425fa9be1079c6ed30f9 = L.popup({"maxWidth": "100%"});
+        var popup_a14af2ba2fca48278e4d18e4547b73c4 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_d8be652b937b4a2eab3b255a1f5a1a2c = $(`<div id="html_d8be652b937b4a2eab3b255a1f5a1a2c" style="width: 100.0%; height: 100.0%;">Helen Newberry Joy Hospital</div>`)[0];
-            popup_8b676073da6b425fa9be1079c6ed30f9.setContent(html_d8be652b937b4a2eab3b255a1f5a1a2c);
+            var html_5bbe9faa921d49dea8fe01c040be61d1 = $(`<div id="html_5bbe9faa921d49dea8fe01c040be61d1" style="width: 100.0%; height: 100.0%;">Hospital name: Helen Newberry Joy Hospital<br> Number of COVID patients: 51<br> Number of ICU patients: 11</div>`)[0];
+            popup_a14af2ba2fca48278e4d18e4547b73c4.setContent(html_5bbe9faa921d49dea8fe01c040be61d1);
         
 
-        circle_46495ea5174e409892614d4e5aaf12b7.bindPopup(popup_8b676073da6b425fa9be1079c6ed30f9)
+        circle_858d1a29c7144db481a880c827b546ec.bindPopup(popup_a14af2ba2fca48278e4d18e4547b73c4)
         ;
 
         
     
     
-            var circle_c7559dfb2aab43da9458b51f10335bd2 = L.circle(
+            var circle_a814ae89055b49ceaff505a6a2046ad5 = L.circle(
                 [47.2389105, -88.4434608],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5869.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5869.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_810ea4bdd5b74c2688fa8429725c76a4 = L.popup({"maxWidth": "100%"});
+        var popup_d19cf32b757042458110c1c8391e8b8e = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_b8ea62831e8b4f0d96fd6a4e167f391b = $(`<div id="html_b8ea62831e8b4f0d96fd6a4e167f391b" style="width: 100.0%; height: 100.0%;">Aspirus</div>`)[0];
-            popup_810ea4bdd5b74c2688fa8429725c76a4.setContent(html_b8ea62831e8b4f0d96fd6a4e167f391b);
+            var html_26a62a87dfda49829b4b6b9e61a8e070 = $(`<div id="html_26a62a87dfda49829b4b6b9e61a8e070" style="width: 100.0%; height: 100.0%;">Hospital name: Aspirus<br> Number of COVID patients: 2<br> Number of ICU patients: 0</div>`)[0];
+            popup_d19cf32b757042458110c1c8391e8b8e.setContent(html_26a62a87dfda49829b4b6b9e61a8e070);
         
 
-        circle_c7559dfb2aab43da9458b51f10335bd2.bindPopup(popup_810ea4bdd5b74c2688fa8429725c76a4)
+        circle_a814ae89055b49ceaff505a6a2046ad5.bindPopup(popup_d19cf32b757042458110c1c8391e8b8e)
         ;
 
         
     
     
-            var circle_7e0151410e3f4983850bfcf68fe7d304 = L.circle(
+            var circle_fb6500a459624a6290d2128c1eef51d5 = L.circle(
                 [43.8426786, -82.65201549999999],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5933.0, "stroke": true, "weight": 3}
-            ).addTo(map_8d313e33de7d4f028cd9c34a44f45898);
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5933.0, "stroke": true, "weight": 3}
+            ).addTo(map_f65a8e07e7a4448d827b78adbafd5af8);
         
     
-        var popup_5f57194b136b4f7db2b4c9a5ed2f74f6 = L.popup({"maxWidth": "100%"});
+        var popup_60abe54f79e0485c9d4f321c0920e533 = L.popup({"maxWidth": 300, "minWidth": 0});
 
         
-            var html_861a96aa0a8b45a98070529906294686 = $(`<div id="html_861a96aa0a8b45a98070529906294686" style="width: 100.0%; height: 100.0%;">Harbor Beach Community Hospital</div>`)[0];
-            popup_5f57194b136b4f7db2b4c9a5ed2f74f6.setContent(html_861a96aa0a8b45a98070529906294686);
+            var html_45d11cab4e7e4ac48f0e10d419140cf8 = $(`<div id="html_45d11cab4e7e4ac48f0e10d419140cf8" style="width: 100.0%; height: 100.0%;">Hospital name: Harbor Beach Community Hospital<br> Number of COVID patients: 1<br> Number of ICU patients: 1</div>`)[0];
+            popup_60abe54f79e0485c9d4f321c0920e533.setContent(html_45d11cab4e7e4ac48f0e10d419140cf8);
         
 
-        circle_7e0151410e3f4983850bfcf68fe7d304.bindPopup(popup_5f57194b136b4f7db2b4c9a5ed2f74f6)
+        circle_fb6500a459624a6290d2128c1eef51d5.bindPopup(popup_60abe54f79e0485c9d4f321c0920e533)
         ;
 
         
