@@ -87,6 +87,12 @@ for i in range(0,len(glove)):
     else:
         glove[i]=0.25
 
+score = []
+for i in range(0,len(glove)):
+    val=(n95[i])*(surg[i])*(gown[i])*(eye[i])*(glove[i])*(newlist[i])
+    score.append(val)
+
+
 df1.insert(3,"N95 masks scores",n95,True)
 df1.insert(5,"Surgery masks scores",surg,True)
 df1.insert(7,"Gowns scores",gown,True)
@@ -95,4 +101,6 @@ df1.insert(11,"Glove scores",glove,True)
 
 
 
+
+df1.insert(14,"final score",score,True)
 df1.to_excel("data.xlsx")
