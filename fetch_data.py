@@ -89,7 +89,7 @@ for i in range(0,len(glove)):
 
 score = []
 for i in range(0,len(glove)):
-    val=(n95[i])*(surg[i])*(gown[i])*(eye[i])*(glove[i])*(newlist[i])
+    val=(n95[i])+(surg[i])+(gown[i])+(eye[i])+(glove[i])+(1-newlist[i])
     score.append(val)
 
 
