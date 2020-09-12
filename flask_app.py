@@ -10,6 +10,10 @@ def index():
     fetch_data.fetchdata()
     return render_template('map.html')
 
+@app.route('/thank')
+def thank():
+    return render_template('thankyou.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
 

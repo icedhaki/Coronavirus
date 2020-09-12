@@ -25,19 +25,32 @@
             <style>
                 #map_8d313e33de7d4f028cd9c34a44f45898 {
                     position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
+                    width: 80.0%;
+                    height: 80.0%;
                     left: 0.0%;
                     top: 0.0%;
+                    margin: auto
                 }
             </style>
         
 </head>
 <body>    
-    
-            <div class="folium-map" id="map_8d313e33de7d4f028cd9c34a44f45898" ></div>
+    <h1>
+        <a href="thank">Hospital Thank You's</a>
+    </h1>
+    <div style="display:flex">
+        <div>
+            Corona Helping Hands
+        </div>
+        <div id="datetime"></div>
+    </div>
+        <div class="folium-map" id="map_8d313e33de7d4f028cd9c34a44f45898" ></div>
         
 </body>
+    <script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = "Last Updated: " + dt.toLocaleDateString() + " " + dt.toLocaleTimeString();
+    </script>
 <script>    
     
             var map_8d313e33de7d4f028cd9c34a44f45898 = L.map(
@@ -45,7 +58,7 @@
                 {
                     center: [44.3148, -85.6024],
                     crs: L.CRS.EPSG3857,
-                    zoom: 7.5,
+                    zoom: 6.5,
                     zoomControl: true,
                     preferCanvas: false,
                 }
