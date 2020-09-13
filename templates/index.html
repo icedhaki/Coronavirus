@@ -88,7 +88,9 @@
 </body>
 <script>
     var dt = new Date();
-    document.getElementById("datetime").innerHTML = "Last Updated: " + dt.toLocaleDateString() + " " + dt.toLocaleTimeString();
+    var doc = document.getElementById("datetime");
+    doc.style="margin-left: 15px";
+    doc.innerHTML = "Last Updated: " + dt.toLocaleDateString() + " " + dt.toLocaleTimeString();
 </script>
 <script>    
     
