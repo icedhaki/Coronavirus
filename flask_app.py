@@ -8,7 +8,7 @@ app.secret_key = os.urandom(50)
 @app.route('/')
 def index():
     fetch_data.fetchdata()
-    return render_template('map.html')
+    return render_template('map2.html')
 
 @app.route('/about')
 def about():
