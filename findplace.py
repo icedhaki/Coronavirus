@@ -229,6 +229,3 @@ def findplace():
 
     filepath = "templates/map.html"
     m.save(filepath)
-    webbrowser.open('file://' + filepath)
-    return m
-
