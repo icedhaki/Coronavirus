@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <head>    
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script>
             L_NO_TOUCH = false;
             L_DISABLE_3D = false;
@@ -26,17 +28,61 @@
             <style>
                 #map_2173242a247c4774acd8438a4705b791 {
                     position: relative;
-                    width: 80.0%;
-                    height: 80.0%;
+                    width: 100.0%;
+                    height: 60.0%;
                     left: 0.0%;
                     top: 0.0%;
                     margin: auto;
                 }
+                .navbar-nav.navbar-center {
+                position: absolute;
+                left: 50%;
+                transform: translatex(-50%);
+                }
+                .container{
+                    text-align: center;
+                }
+                .logo{
+                    align-items: center;
+                }
+                table {
+                border-collapse: collapse;
+                border: 2px black solid;
+                font: 12px sans-serif;
+            }
+
+            td {
+                border: 1px black solid;
+                padding: 5px;
+            }
             </style>   
 </head>
 
 <body>    
-    <h2><a href="/about">Back</a></h2>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            
+            <ul class="nav navbar-nav navbar-center">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Thank you!</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h3>Coronavirus Helping Hands</h3>
+        <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
+      </div>
+
     <div style="display: flex">
         <div id="datetime"></div>
     </div>
@@ -44,7 +90,30 @@
     
             <div class="folium-map" id="map_2173242a247c4774acd8438a4705b791" ></div>
         
+    <div id="table-container"></div>
+        <script>CsvToHtmlTable.init({
+        csv_path: 'data.csv',
+        element: 'table-container', 
+        allow_download: true,
+        csv_options: {separator: ';', delimiter: '"'},
+        datatables_options: {"paging": false}
+  });
+  </script> 
+
 </body>
+<script>
+    var request = new XMLHttpRequest();  
+    request.open("GET", 'data.csv', false);   
+    request.send(null);  
+
+    var csvData = new Array();
+    var jsonObject = request.responseText.split(/\r?\n|\r/);
+    for (var i = 0; i < jsonObject.length; i++) {
+    csvData.push(jsonObject[i].split(','));
+    }
+    // Retrived data from csv file content
+    //console.log(csvData);
+</script>
 <script>
     var dt = new Date();
     document.getElementById("datetime").innerHTML = "Last Updated: " + dt.toLocaleDateString() + " " + dt.toLocaleTimeString();
@@ -56,7 +125,7 @@
                 {
                     center: [44.3148, -85.6024],
                     crs: L.CRS.EPSG3857,
-                    zoom: 7.5,
+                    zoom: 6,
                     zoomControl: true,
                     preferCanvas: false,
                 }
