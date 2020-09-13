@@ -1,4 +1,25 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width:50%;
+    height:50%;
+  }
+  </style>
+</head>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+</head>
 <style>
     ul {
         list-style-type: none;
@@ -23,43 +44,56 @@
     li a:hover {
         background-color: #FF5733;
     }
-    </style>
-     <ul>
-        <li><a class="active" href="\">Map</a></li>
-        <li><a href="#about">About</a></li>
-          </ul>
+</style>
+<ul>
+    <li><a class="active" href="\">Map</a></li>
+    <li><a href="#about">About</a></li>
+</ul>
 
-    <img src="Jonyoon.png"/>
-    <p>
-        Jon Yoon
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-500" src="Jonyoon.png">
+      <p> Jon Yoon
         <br> Otolaryngology Surgeon at UW Medicine 
         <br>“Thank you donors for your generous support during this critical time of need. Your donations have helped us ensure we have the resources needed to continue providing the best care possible.” 
-    </p>
-             
-     <img src="Kevinhunt.png"/>
-    <p>
-          Kevin Hunt 
+      </p>
+    </div>
+    <div class="carousel-item">
+      <img src="Kevinhunt.png">
+      <p> Kevin Hunt 
           <br> Cardiologist at Stanford Medicine
           <br>“Donors have donated so many masks we couldn’t come close to counting them as they continued to pour in! We appreciate the support of our generous donors now more than ever.”
-    </p>
-    
-    <img src="MichelleKolb.png"/>
-    <p>
+      </p>
+    </div>
+    <div class="carousel-item">
+      <img src="MichelleKolb.png">
+      <p>
         Michelle Kolb 
         <br> Pediatrician at Seattle Childrens
         <br> “When there was a surge in COVID-19 cases in our hospital, we saw more and more donations coming into the hospital. With these donations, we were able to have enough medical equipment for ourselves and even help other hospitals nearby who were low on resources. Thank you to all our donors for this outpouring of support!”
     </p>
-   
-    <img src="Sunkim.png"/>
-    <p>
-        Sun Kim
-        <br> Endocrinologist at John Hopkins Medicine 
-        <br>“Our donor’s help has made a profound impact on our hospital and on our healthcare workers. We are so grateful for all the support from our donors in our COVID-19 efforts.”
-    </p>
+    </div>
     
-    
-    
-    
-    
-     
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
 </body>
+</html>
