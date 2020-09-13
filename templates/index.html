@@ -1,28 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<style>
-    .navbar-nav.navbar-center {
-    position: absolute;
-    left: 50%;
-    transform: translatex(-50%);
-}
-.container{
-    text-align: center;
-}
-.logo{
-    align-items: center;
-}
-</style>
-<body>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <title>Corona Helping Hands</title>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9772d28124d649798ca1862f52810310 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 60.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                    margin: auto;
+                }
+                .navbar-nav.navbar-center {
+                position: absolute;
+                left: 50%;
+                transform: translatex(-50%);
+                }
+                .container{
+                    text-align: center;
+                }
+                .logo{
+                    align-items: center;
+                }
+                table {
+                border-collapse: collapse;
+                border: 2px black solid;
+                font: 12px sans-serif;
+            }
 
+            td {
+                border: 1px black solid;
+                padding: 5px;
+            }
+            </style> 
+        
+</head>
+<body>    
     <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -32,21 +66,905 @@
             </button>
         </div>
         <div class="navbar-collapse collapse">
-            
             <ul class="nav navbar-nav navbar-center">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Thank you!</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="\">Home</a></li>
+                <li><a href="\about">Mission</a></li>
             </ul>
             
         </div>
     </nav>
     
     <div class="container">
-        <h3>Coronavirus Helping Hands</h3>
-        <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
+        <h1 class="cover-heading">Corona Helping Hands</h1>
+        <h4 style="width: 60%; margin: auto">Intuitive donation platform where citizens can quickly find hospitals in need of donations and help ensure hospitals maintain an adequate number of supplies and equipment.
       </div>
 
-    
+    <div style="display: flex">
+        <div id="datetime"></div>
+    </div>
+    <!-- <div class="folium-map" id="map_f65a8e07e7a4448d827b78adbafd5af8" ></div> -->
+            <div class="folium-map" id="map_9772d28124d649798ca1862f52810310" ></div>
+        
 </body>
-</html>
+<script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = "Last Updated: " + dt.toLocaleDateString() + " " + dt.toLocaleTimeString();
+</script>
+<script>    
+    
+            var map_9772d28124d649798ca1862f52810310 = L.map(
+                "map_9772d28124d649798ca1862f52810310",
+                {
+                    center: [44.3148, -85.6024],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 7.5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9c70574b12584571ac5ef38db1910df0 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+            var circle_7c2b12adb3e241b4b426878bfe32f486 = L.circle(
+                [43.0214202, -83.7045634],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_0c7823fa4b39490fb01723539614dbd8 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_e6417ce3e9ff4fdc8d48cdba95f70e01 = $(`<div id="html_e6417ce3e9ff4fdc8d48cdba95f70e01" style="width: 100.0%; height: 100.0%;">Hurley Medical Center<br> Number of COVID patients: 71<br> Number of ICU patients: 24  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_0c7823fa4b39490fb01723539614dbd8.setContent(html_e6417ce3e9ff4fdc8d48cdba95f70e01);
+        
+
+        circle_7c2b12adb3e241b4b426878bfe32f486.bindPopup(popup_0c7823fa4b39490fb01723539614dbd8)
+        ;
+
+        
+    
+    
+            var circle_7374a2425e5a4e0ba20f843107060eff = L.circle(
+                [44.7615256, -85.6429105],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8080.000000000001, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_db8cd58653a0446ab054d4967514b968 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_d17e1dc856564b58ab8bc85d51531d20 = $(`<div id="html_d17e1dc856564b58ab8bc85d51531d20" style="width: 100.0%; height: 100.0%;">Munson Health System<br> Number of COVID patients: 7<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_db8cd58653a0446ab054d4967514b968.setContent(html_d17e1dc856564b58ab8bc85d51531d20);
+        
+
+        circle_7374a2425e5a4e0ba20f843107060eff.bindPopup(popup_db8cd58653a0446ab054d4967514b968)
+        ;
+
+        
+    
+    
+            var circle_1a50fe8454d545e8aab0fad1c4cf173e = L.circle(
+                [42.5145386, -83.1926244],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8600.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_93a8a53d3b8346678c577cf8d035814c = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_8f151f7a13604b35a657dc0fd378fc2e = $(`<div id="html_8f151f7a13604b35a657dc0fd378fc2e" style="width: 100.0%; height: 100.0%;">Beaumont<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_93a8a53d3b8346678c577cf8d035814c.setContent(html_8f151f7a13604b35a657dc0fd378fc2e);
+        
+
+        circle_1a50fe8454d545e8aab0fad1c4cf173e.bindPopup(popup_93a8a53d3b8346678c577cf8d035814c)
+        ;
+
+        
+    
+    
+            var circle_9d2ea13de8414902aad625c8552ae4eb = L.circle(
+                [42.28391430000001, -83.7332766],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9180.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_223e223a80df4c0ba0453ca0eb22cf6f = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_835d50f7e6294535af8a29801b872be6 = $(`<div id="html_835d50f7e6294535af8a29801b872be6" style="width: 100.0%; height: 100.0%;">Michigan Medicine<br> Number of COVID patients: 125<br> Number of ICU patients: 35  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_223e223a80df4c0ba0453ca0eb22cf6f.setContent(html_835d50f7e6294535af8a29801b872be6);
+        
+
+        circle_9d2ea13de8414902aad625c8552ae4eb.bindPopup(popup_223e223a80df4c0ba0453ca0eb22cf6f)
+        ;
+
+        
+    
+    
+            var circle_7a7c1f122abf496fa51187b10a247893 = L.circle(
+                [43.6355505, -84.2608259],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7685.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_81b081b93ebe4d6591fc77eb6c91a3e3 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_dbe591092ed14d9a8f6a4fd08ee45ca7 = $(`<div id="html_dbe591092ed14d9a8f6a4fd08ee45ca7" style="width: 100.0%; height: 100.0%;">MidMichigan Health<br> Number of COVID patients: 15<br> Number of ICU patients: 5  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_81b081b93ebe4d6591fc77eb6c91a3e3.setContent(html_dbe591092ed14d9a8f6a4fd08ee45ca7);
+        
+
+        circle_7a7c1f122abf496fa51187b10a247893.bindPopup(popup_81b081b93ebe4d6591fc77eb6c91a3e3)
+        ;
+
+        
+    
+    
+            var circle_41d4caa345a04852903c1b5c8611b7d4 = L.circle(
+                [42.3635022, -83.07581019999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8970.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_e5f1f51905dd42cdaff0e05f5aaa50b2 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_01010b1442284c4a8783eea56350810d = $(`<div id="html_01010b1442284c4a8783eea56350810d" style="width: 100.0%; height: 100.0%;">Henry Ford Health System<br> Number of COVID patients: 19<br> Number of ICU patients: 9  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_e5f1f51905dd42cdaff0e05f5aaa50b2.setContent(html_01010b1442284c4a8783eea56350810d);
+        
+
+        circle_41d4caa345a04852903c1b5c8611b7d4.bindPopup(popup_e5f1f51905dd42cdaff0e05f5aaa50b2)
+        ;
+
+        
+    
+    
+            var circle_a7c8549a33fc45acab6e01fa9b94b464 = L.circle(
+                [42.3543741, -83.0562734],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8939.999999999998, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_d0689b3e20a44d81bee39012de155f75 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_b3dc1d53ff20430ea086c24420e0e290 = $(`<div id="html_b3dc1d53ff20430ea086c24420e0e290" style="width: 100.0%; height: 100.0%;">Detroit Medical Center<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_d0689b3e20a44d81bee39012de155f75.setContent(html_b3dc1d53ff20430ea086c24420e0e290);
+        
+
+        circle_a7c8549a33fc45acab6e01fa9b94b464.bindPopup(popup_d0689b3e20a44d81bee39012de155f75)
+        ;
+
+        
+    
+    
+            var circle_cc711c41b5b04ec0bd5932e7d7a48bf1 = L.circle(
+                [41.9352768, -85.6479257],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6819.999999999999, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_350250dfe70e4223a7a71cae048e558b = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_c53927c0b4a04f3a930bdad6c8d0cf6c = $(`<div id="html_c53927c0b4a04f3a930bdad6c8d0cf6c" style="width: 100.0%; height: 100.0%;">Three Rivers Health<br> Number of COVID patients: 23<br> Number of ICU patients: 6  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_350250dfe70e4223a7a71cae048e558b.setContent(html_c53927c0b4a04f3a930bdad6c8d0cf6c);
+        
+
+        circle_cc711c41b5b04ec0bd5932e7d7a48bf1.bindPopup(popup_350250dfe70e4223a7a71cae048e558b)
+        ;
+
+        
+    
+    
+            var circle_03166bae1b05418188827d244a162704 = L.circle(
+                [42.4984276, -83.08378069999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8755.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_536286da07a543a096ad1cc4454903e8 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_6c3c72a41ede449f9264d50524ca0718 = $(`<div id="html_6c3c72a41ede449f9264d50524ca0718" style="width: 100.0%; height: 100.0%;">Ascension<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_536286da07a543a096ad1cc4454903e8.setContent(html_6c3c72a41ede449f9264d50524ca0718);
+        
+
+        circle_03166bae1b05418188827d244a162704.bindPopup(popup_536286da07a543a096ad1cc4454903e8)
+        ;
+
+        
+    
+    
+            var circle_136fbb83dc204a1b8e880dd253a094ce = L.circle(
+                [41.9381529, -84.9893546],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6415.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_e1522dd73c324421b70ee31d971d0ecc = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_92c56773e7b14b99897260923aceb34d = $(`<div id="html_92c56773e7b14b99897260923aceb34d" style="width: 100.0%; height: 100.0%;">ProMedica<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_e1522dd73c324421b70ee31d971d0ecc.setContent(html_92c56773e7b14b99897260923aceb34d);
+        
+
+        circle_136fbb83dc204a1b8e880dd253a094ce.bindPopup(popup_e1522dd73c324421b70ee31d971d0ecc)
+        ;
+
+        
+    
+    
+            var circle_2c86f7626fd54fa2978114c07fc42421 = L.circle(
+                [43.215921, -85.073668],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5940.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_8072163f560349d7b07b0f5ea34c131e = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_48e3e7f095c2420c9873eafb9928d3ac = $(`<div id="html_48e3e7f095c2420c9873eafb9928d3ac" style="width: 100.0%; height: 100.0%;">Sheridan Community Hospital<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_8072163f560349d7b07b0f5ea34c131e.setContent(html_48e3e7f095c2420c9873eafb9928d3ac);
+        
+
+        circle_2c86f7626fd54fa2978114c07fc42421.bindPopup(popup_8072163f560349d7b07b0f5ea34c131e)
+        ;
+
+        
+    
+    
+            var circle_d2d2519e4e194870ac13c7c14101526d = L.circle(
+                [41.8722716, -85.19469629999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8455.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_e89d6b7a2c3e494bb414104221e537a8 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_3d8949bd2d004fba9cd7fae11e77d404 = $(`<div id="html_3d8949bd2d004fba9cd7fae11e77d404" style="width: 100.0%; height: 100.0%;">Bronson<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_e89d6b7a2c3e494bb414104221e537a8.setContent(html_3d8949bd2d004fba9cd7fae11e77d404);
+        
+
+        circle_d2d2519e4e194870ac13c7c14101526d.bindPopup(popup_e89d6b7a2c3e494bb414104221e537a8)
+        ;
+
+        
+    
+    
+            var circle_63c70b750f0c42779256e1854ee72f30 = L.circle(
+                [42.4349064, -83.4278728],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8810.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_95f6175290fe42b589dca69c82f59c37 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_cc288e35d4aa45aeb6c7c5b079dba289 = $(`<div id="html_cc288e35d4aa45aeb6c7c5b079dba289" style="width: 100.0%; height: 100.0%;">Trinity<br> Number of COVID patients: 129<br> Number of ICU patients: 37  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_95f6175290fe42b589dca69c82f59c37.setContent(html_cc288e35d4aa45aeb6c7c5b079dba289);
+        
+
+        circle_63c70b750f0c42779256e1854ee72f30.bindPopup(popup_95f6175290fe42b589dca69c82f59c37)
+        ;
+
+        
+    
+    
+            var circle_ffdf3eb833794afabb5423b22cc33b06 = L.circle(
+                [42.63423299999999, -83.3092325],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5040.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_1219624357404032878ed1363e3ec2f0 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_1fe8737621a24aa7983885e660cec1d9 = $(`<div id="html_1fe8737621a24aa7983885e660cec1d9" style="width: 100.0%; height: 100.0%;">Pontiac General Hospital<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_1219624357404032878ed1363e3ec2f0.setContent(html_1fe8737621a24aa7983885e660cec1d9);
+        
+
+        circle_ffdf3eb833794afabb5423b22cc33b06.bindPopup(popup_1219624357404032878ed1363e3ec2f0)
+        ;
+
+        
+    
+    
+            var circle_d92b0894332b4897991260e9f57b3183 = L.circle(
+                [42.5075088, -83.00411559999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8065.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_d5757549a7a842698b77793d59153b4f = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_cc7f999fc76b4740abd09d32c7492bfc = $(`<div id="html_cc7f999fc76b4740abd09d32c7492bfc" style="width: 100.0%; height: 100.0%;">Prime Health<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_d5757549a7a842698b77793d59153b4f.setContent(html_cc7f999fc76b4740abd09d32c7492bfc);
+        
+
+        circle_d92b0894332b4897991260e9f57b3183.bindPopup(popup_d5757549a7a842698b77793d59153b4f)
+        ;
+
+        
+    
+    
+            var circle_1132fb4d25874494b1e55f9899da1915 = L.circle(
+                [42.3314999, -83.1135654],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9120.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_a025154b607746dd97137a0c9cb0519b = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_e369f2a98769418891394655fc97ce5e = $(`<div id="html_e369f2a98769418891394655fc97ce5e" style="width: 100.0%; height: 100.0%;">Covenant<br> Number of COVID patients: 4<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_a025154b607746dd97137a0c9cb0519b.setContent(html_e369f2a98769418891394655fc97ce5e);
+        
+
+        circle_1132fb4d25874494b1e55f9899da1915.bindPopup(popup_a025154b607746dd97137a0c9cb0519b)
+        ;
+
+        
+    
+    
+            var circle_1e44429ef13849cfa112422f5f7e8a95 = L.circle(
+                [41.9120432, -84.633113],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6365.000000000001, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_9cd218a984454653ada6e76d3863e9e5 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_875ab123e8e24a1eacff1a13455f5d53 = $(`<div id="html_875ab123e8e24a1eacff1a13455f5d53" style="width: 100.0%; height: 100.0%;">Hillsdale Hospital<br> Number of COVID patients: 3<br> Number of ICU patients: 1  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_9cd218a984454653ada6e76d3863e9e5.setContent(html_875ab123e8e24a1eacff1a13455f5d53);
+        
+
+        circle_1e44429ef13849cfa112422f5f7e8a95.bindPopup(popup_9cd218a984454653ada6e76d3863e9e5)
+        ;
+
+        
+    
+    
+            var circle_a0ffc9f91b1c4538b9e3b2e3f7c61903 = L.circle(
+                [43.0507132, -86.22921029999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6285.000000000001, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_07d83e382ece4612884e8109ba27efb6 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_c662a2e2a72c4e49a6b23c3031b887e5 = $(`<div id="html_c662a2e2a72c4e49a6b23c3031b887e5" style="width: 100.0%; height: 100.0%;">North Ottawa Community Hosp<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_07d83e382ece4612884e8109ba27efb6.setContent(html_c662a2e2a72c4e49a6b23c3031b887e5);
+        
+
+        circle_a0ffc9f91b1c4538b9e3b2e3f7c61903.bindPopup(popup_07d83e382ece4612884e8109ba27efb6)
+        ;
+
+        
+    
+    
+            var circle_fd57eabe92694109ad3ef41de7d692d5 = L.circle(
+                [43.0058489, -84.17980469999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7160.000000000001, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_391d5e50a19b4d9e8884cce68eb90c44 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_605ca8fed64e43f3b5841dd2f40aacfb = $(`<div id="html_605ca8fed64e43f3b5841dd2f40aacfb" style="width: 100.0%; height: 100.0%;">Memorial Healthcare<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_391d5e50a19b4d9e8884cce68eb90c44.setContent(html_605ca8fed64e43f3b5841dd2f40aacfb);
+        
+
+        circle_fd57eabe92694109ad3ef41de7d692d5.bindPopup(popup_391d5e50a19b4d9e8884cce68eb90c44)
+        ;
+
+        
+    
+    
+            var circle_07337182f8764c039935946a91c14236 = L.circle(
+                [43.0143291, -83.7329937],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8930.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_181f945b0a824df4b2fdd437e1c19ad0 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_fb7c40c14a4945fda2438d039311ce76 = $(`<div id="html_fb7c40c14a4945fda2438d039311ce76" style="width: 100.0%; height: 100.0%;">McLaren<br> Number of COVID patients: 2<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_181f945b0a824df4b2fdd437e1c19ad0.setContent(html_fb7c40c14a4945fda2438d039311ce76);
+        
+
+        circle_07337182f8764c039935946a91c14236.bindPopup(popup_181f945b0a824df4b2fdd437e1c19ad0)
+        ;
+
+        
+    
+    
+            var circle_ea1fdde6092542aeac1296b426b960ff = L.circle(
+                [42.3904977, -83.3738935],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8725.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_5c1d1caa48cd452eb4cccea93de703ea = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_5e377335791a4107a4de9780279951f2 = $(`<div id="html_5e377335791a4107a4de9780279951f2" style="width: 100.0%; height: 100.0%;">Spectrum<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_5c1d1caa48cd452eb4cccea93de703ea.setContent(html_5e377335791a4107a4de9780279951f2);
+        
+
+        circle_ea1fdde6092542aeac1296b426b960ff.bindPopup(popup_5c1d1caa48cd452eb4cccea93de703ea)
+        ;
+
+        
+    
+    
+            var circle_0e2374abd6c445469ea0cdf8e5ac6b36 = L.circle(
+                [42.273725, -84.9569467],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7200.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_941a9491c88d495695724b9cb9ed046f = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_371169e671324ed98d243d2df5ca707e = $(`<div id="html_371169e671324ed98d243d2df5ca707e" style="width: 100.0%; height: 100.0%;">Oaklawn Hospital<br> Number of COVID patients: 69<br> Number of ICU patients: 18  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_941a9491c88d495695724b9cb9ed046f.setContent(html_371169e671324ed98d243d2df5ca707e);
+        
+
+        circle_0e2374abd6c445469ea0cdf8e5ac6b36.bindPopup(popup_941a9491c88d495695724b9cb9ed046f)
+        ;
+
+        
+    
+    
+            var circle_54de590dec174a988a7fac995da5a49e = L.circle(
+                [44.7311836, -85.18444459999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6250.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_11e269a9aba44df3b417d9df6a9cdc99 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_66884ffcb068479f87cdc73231a6de76 = $(`<div id="html_66884ffcb068479f87cdc73231a6de76" style="width: 100.0%; height: 100.0%;">Kalkaska Memorial Health Center<br> Number of COVID patients: 4<br> Number of ICU patients: 3  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_11e269a9aba44df3b417d9df6a9cdc99.setContent(html_66884ffcb068479f87cdc73231a6de76);
+        
+
+        circle_54de590dec174a988a7fac995da5a49e.bindPopup(popup_11e269a9aba44df3b417d9df6a9cdc99)
+        ;
+
+        
+    
+    
+            var circle_49768b4063c94ba9adcc7c174efc97fd = L.circle(
+                [42.7337155, -84.5351111],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8955.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_5289ba5804be4f6ba699504d885eadb9 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_3bcc4885d1744054820d6f96f401ff3b = $(`<div id="html_3bcc4885d1744054820d6f96f401ff3b" style="width: 100.0%; height: 100.0%;">Sparrow Health System<br> Number of COVID patients: 1<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_5289ba5804be4f6ba699504d885eadb9.setContent(html_3bcc4885d1744054820d6f96f401ff3b);
+        
+
+        circle_49768b4063c94ba9adcc7c174efc97fd.bindPopup(popup_5289ba5804be4f6ba699504d885eadb9)
+        ;
+
+        
+    
+    
+            var circle_72dfe1e517b242fc82899e880e27fec1 = L.circle(
+                [43.8343728, -83.2783501],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5605.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_aa5f9e3e625246928c75e2bfbc512b50 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_161ec155fbce4350bea65131fe347493 = $(`<div id="html_161ec155fbce4350bea65131fe347493" style="width: 100.0%; height: 100.0%;">Scheurer Hospital<br> Number of COVID patients: 14<br> Number of ICU patients: 5  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_aa5f9e3e625246928c75e2bfbc512b50.setContent(html_161ec155fbce4350bea65131fe347493);
+        
+
+        circle_72dfe1e517b242fc82899e880e27fec1.bindPopup(popup_aa5f9e3e625246928c75e2bfbc512b50)
+        ;
+
+        
+    
+    
+            var circle_6a3afdee6993494388706498701a82e8 = L.circle(
+                [43.33247859999999, -83.08143079999999],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6400.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_22b61a48754940cdaaef432a848c9a50 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_f457a5671f3741bf84cc8434df6157a2 = $(`<div id="html_f457a5671f3741bf84cc8434df6157a2" style="width: 100.0%; height: 100.0%;">Marlette Regional Hospital<br> Number of COVID patients: 7<br> Number of ICU patients: 2  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_22b61a48754940cdaaef432a848c9a50.setContent(html_f457a5671f3741bf84cc8434df6157a2);
+        
+
+        circle_6a3afdee6993494388706498701a82e8.bindPopup(popup_22b61a48754940cdaaef432a848c9a50)
+        ;
+
+        
+    
+    
+            var circle_4c11678434474a3dacb7026dcf8f1a67 = L.circle(
+                [42.7751338, -86.1145293],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8650.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_f7e78cb840f647a696053d95b1fc65e8 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_513fd64b13bc48e4a1ec3e4ad98fa018 = $(`<div id="html_513fd64b13bc48e4a1ec3e4ad98fa018" style="width: 100.0%; height: 100.0%;">Holland Community Hospital<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_f7e78cb840f647a696053d95b1fc65e8.setContent(html_513fd64b13bc48e4a1ec3e4ad98fa018);
+        
+
+        circle_4c11678434474a3dacb7026dcf8f1a67.bindPopup(popup_f7e78cb840f647a696053d95b1fc65e8)
+        ;
+
+        
+    
+    
+            var circle_8d72821cb9a84ac8b25ac895dc063ca8 = L.circle(
+                [41.7950424, -85.4073887],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8000.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_9cc325da868f4335931b61ae5a1b4008 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_77eb5059d29b4e68af056977195b0da8 = $(`<div id="html_77eb5059d29b4e68af056977195b0da8" style="width: 100.0%; height: 100.0%;">Sturgis Hospital<br> Number of COVID patients: 6<br> Number of ICU patients: 4  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_9cc325da868f4335931b61ae5a1b4008.setContent(html_77eb5059d29b4e68af056977195b0da8);
+        
+
+        circle_8d72821cb9a84ac8b25ac895dc063ca8.bindPopup(popup_9cc325da868f4335931b61ae5a1b4008)
+        ;
+
+        
+    
+    
+            var circle_b84cd2bde5694cfa8978ca706ec53178 = L.circle(
+                [46.5431985, -87.4114733],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8435.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_fac63385c5414e29b68b133b7b382906 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_7722cc7bf6df4c0e9cd85b468c1c01fc = $(`<div id="html_7722cc7bf6df4c0e9cd85b468c1c01fc" style="width: 100.0%; height: 100.0%;">UP Health<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_fac63385c5414e29b68b133b7b382906.setContent(html_7722cc7bf6df4c0e9cd85b468c1c01fc);
+        
+
+        circle_b84cd2bde5694cfa8978ca706ec53178.bindPopup(popup_fac63385c5414e29b68b133b7b382906)
+        ;
+
+        
+    
+    
+            var circle_b394f40cccad495f983d4946dd7b5c60 = L.circle(
+                [46.4247854, -86.6252839],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6070.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_58d8957f4f6f4e5d8c9933ac426eee9d = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_240aeafd2f9b4dd8ace11a05a55d053a = $(`<div id="html_240aeafd2f9b4dd8ace11a05a55d053a" style="width: 100.0%; height: 100.0%;">Munising Memorial Hospital<br> Number of COVID patients: 1<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_58d8957f4f6f4e5d8c9933ac426eee9d.setContent(html_240aeafd2f9b4dd8ace11a05a55d053a);
+        
+
+        circle_b394f40cccad495f983d4946dd7b5c60.bindPopup(popup_58d8957f4f6f4e5d8c9933ac426eee9d)
+        ;
+
+        
+    
+    
+            var circle_4f939757eb9c4c5db48c3d991469dd14 = L.circle(
+                [46.731815, -88.42480499999999],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6000.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_5b08df355b3b499792d202e9a8716c0f = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_c4abcaa7199943b6a5657b45074cf989 = $(`<div id="html_c4abcaa7199943b6a5657b45074cf989" style="width: 100.0%; height: 100.0%;">Baraga County Memorial Hospital<br> Number of COVID patients: 0<br> Number of ICU patients: 1  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_5b08df355b3b499792d202e9a8716c0f.setContent(html_c4abcaa7199943b6a5657b45074cf989);
+        
+
+        circle_4f939757eb9c4c5db48c3d991469dd14.bindPopup(popup_5b08df355b3b499792d202e9a8716c0f)
+        ;
+
+        
+    
+    
+            var circle_f63d38ea2e15435d84a4fa6ca720e34a = L.circle(
+                [42.2161722, -83.3553842],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7935.000000000001, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_564b85b7be6b4a41b4ffd8c39d96559d = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_d5f50b99e3174aa4a8dfedb4041684cd = $(`<div id="html_d5f50b99e3174aa4a8dfedb4041684cd" style="width: 100.0%; height: 100.0%;">Metro<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_564b85b7be6b4a41b4ffd8c39d96559d.setContent(html_d5f50b99e3174aa4a8dfedb4041684cd);
+        
+
+        circle_f63d38ea2e15435d84a4fa6ca720e34a.bindPopup(popup_564b85b7be6b4a41b4ffd8c39d96559d)
+        ;
+
+        
+    
+    
+            var circle_6d882b8a528041f1b51e2b6d9c8879d5 = L.circle(
+                [43.4237214, -82.83219110000002],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5800.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_bcaf6f100e1b457aa6b52a2f6547001b = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_ded9ed34c3ee4a2bb3d5307bcb2bbb87 = $(`<div id="html_ded9ed34c3ee4a2bb3d5307bcb2bbb87" style="width: 100.0%; height: 100.0%;">McKenzie Memorial Hospital<br> Number of COVID patients: 5<br> Number of ICU patients: 1  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_bcaf6f100e1b457aa6b52a2f6547001b.setContent(html_ded9ed34c3ee4a2bb3d5307bcb2bbb87);
+        
+
+        circle_6d882b8a528041f1b51e2b6d9c8879d5.bindPopup(popup_bcaf6f100e1b457aa6b52a2f6547001b)
+        ;
+
+        
+    
+    
+            var circle_876fd8f7cc27466583eec72dbd400e8f = L.circle(
+                [45.7427923, -87.09630369999999],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7789.999999999999, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_c2e1e199fbe54aaca6363dd300942a0d = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_99d13b4070a54857835600428afc68be = $(`<div id="html_99d13b4070a54857835600428afc68be" style="width: 100.0%; height: 100.0%;">OSF St. Francis Hospital<br> Number of COVID patients: 8<br> Number of ICU patients: 2  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_c2e1e199fbe54aaca6363dd300942a0d.setContent(html_99d13b4070a54857835600428afc68be);
+        
+
+        circle_876fd8f7cc27466583eec72dbd400e8f.bindPopup(popup_c2e1e199fbe54aaca6363dd300942a0d)
+        ;
+
+        
+    
+    
+            var circle_8307ba025d934d95a22063c01d4f57bb = L.circle(
+                [42.4644518, -83.26180190000001],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6875.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_5118987b40dc4448a31574860c4c9947 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_ca8a63bc5af94327a86b8f3fb3764a89 = $(`<div id="html_ca8a63bc5af94327a86b8f3fb3764a89" style="width: 100.0%; height: 100.0%;">Straith Hospital<br> Number of COVID patients: 1<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_5118987b40dc4448a31574860c4c9947.setContent(html_ca8a63bc5af94327a86b8f3fb3764a89);
+        
+
+        circle_8307ba025d934d95a22063c01d4f57bb.bindPopup(popup_5118987b40dc4448a31574860c4c9947)
+        ;
+
+        
+    
+    
+            var circle_5f65f71541304167a68639e8dfaeb630 = L.circle(
+                [43.5281974, -82.73416929999999],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5000.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_1ccb93f20fda45c890df6c2717d3262e = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_70560f922b1c4381ba5920a5b217dd46 = $(`<div id="html_70560f922b1c4381ba5920a5b217dd46" style="width: 100.0%; height: 100.0%;">Deckerville Community Hospital<br> Number of COVID patients: 1<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_1ccb93f20fda45c890df6c2717d3262e.setContent(html_70560f922b1c4381ba5920a5b217dd46);
+        
+
+        circle_5f65f71541304167a68639e8dfaeb630.bindPopup(popup_1ccb93f20fda45c890df6c2717d3262e)
+        ;
+
+        
+    
+    
+            var circle_686717caa8724ec488efc6a72c76700b = L.circle(
+                [45.8098408, -88.0445283],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7145.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_d78cb35b704249f592cc95571ad6065e = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_5524c220f3064b8a8b725f82d14df6e7 = $(`<div id="html_5524c220f3064b8a8b725f82d14df6e7" style="width: 100.0%; height: 100.0%;">Dickinson Memorial Health Care System<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_d78cb35b704249f592cc95571ad6065e.setContent(html_5524c220f3064b8a8b725f82d14df6e7);
+        
+
+        circle_686717caa8724ec488efc6a72c76700b.bindPopup(popup_d78cb35b704249f592cc95571ad6065e)
+        ;
+
+        
+    
+    
+            var circle_4a16fef82882438e93872f1f26dd9f62 = L.circle(
+                [43.6040499, -83.18229079999999],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6145.000000000001, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_75a4812ec8244661aaf4b045ae57628a = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_6e9a0240900e4243aa463133b27422e0 = $(`<div id="html_6e9a0240900e4243aa463133b27422e0" style="width: 100.0%; height: 100.0%;">Hills and Dales General Hospital<br> Number of COVID patients: 22<br> Number of ICU patients: 1  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_75a4812ec8244661aaf4b045ae57628a.setContent(html_6e9a0240900e4243aa463133b27422e0);
+        
+
+        circle_4a16fef82882438e93872f1f26dd9f62.bindPopup(popup_75a4812ec8244661aaf4b045ae57628a)
+        ;
+
+        
+    
+    
+            var circle_45f9e787d75e431d9b36a5feb9e9d50d = L.circle(
+                [45.9466777, -86.2761068],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7085.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_001395d662064d3f8b2ce766a4cd9cdf = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_ca24ce0af1164de483e7243d803bc067 = $(`<div id="html_ca24ce0af1164de483e7243d803bc067" style="width: 100.0%; height: 100.0%;">Schoolcraft Memorial Hospital<br> Number of COVID patients: 35<br> Number of ICU patients: 6  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_001395d662064d3f8b2ce766a4cd9cdf.setContent(html_ca24ce0af1164de483e7243d803bc067);
+        
+
+        circle_45f9e787d75e431d9b36a5feb9e9d50d.bindPopup(popup_001395d662064d3f8b2ce766a4cd9cdf)
+        ;
+
+        
+    
+    
+            var circle_7b0f346a77314513b2197013759a629d = L.circle(
+                [45.8907177, -84.7298751],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7000.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_f0f14ec255e346c58e4278cde5f8b537 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_e95597b02d86434794dda54620b1bbf6 = $(`<div id="html_e95597b02d86434794dda54620b1bbf6" style="width: 100.0%; height: 100.0%;">Mackinac Straits Hospital<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_f0f14ec255e346c58e4278cde5f8b537.setContent(html_e95597b02d86434794dda54620b1bbf6);
+        
+
+        circle_7b0f346a77314513b2197013759a629d.bindPopup(popup_f0f14ec255e346c58e4278cde5f8b537)
+        ;
+
+        
+    
+    
+            var circle_104f7a1704314b3dbf9427cc17524a71 = L.circle(
+                [42.49533479999999, -84.6584235],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7000.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_1e8e6659d7544cfe907c90148f95e548 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_44adf6c706dd473e8a8ec37873aee795 = $(`<div id="html_44adf6c706dd473e8a8ec37873aee795" style="width: 100.0%; height: 100.0%;">Eaton Rapids Medical Center<br> Number of COVID patients: 0<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_1e8e6659d7544cfe907c90148f95e548.setContent(html_44adf6c706dd473e8a8ec37873aee795);
+        
+
+        circle_104f7a1704314b3dbf9427cc17524a71.bindPopup(popup_1e8e6659d7544cfe907c90148f95e548)
+        ;
+
+        
+    
+    
+            var circle_718b5535e2cb4650845a6b33ca9ac61c = L.circle(
+                [46.497886, -84.35074589999999],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6545.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_7390bb844b4143ae89905281a592c79e = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_70346c3430a543fb9fa04cffeaecf54b = $(`<div id="html_70346c3430a543fb9fa04cffeaecf54b" style="width: 100.0%; height: 100.0%;">War Memorial Hospital<br> Number of COVID patients: 1<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_7390bb844b4143ae89905281a592c79e.setContent(html_70346c3430a543fb9fa04cffeaecf54b);
+        
+
+        circle_718b5535e2cb4650845a6b33ca9ac61c.bindPopup(popup_7390bb844b4143ae89905281a592c79e)
+        ;
+
+        
+    
+    
+            var circle_91fa4dd728344ed9b76ffddae8a5e7f7 = L.circle(
+                [46.352985, -85.5156125],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5910.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_7397bd0c17634582b1f61b3d0c3ff171 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_b957cfafab3241a1b52900657d5db912 = $(`<div id="html_b957cfafab3241a1b52900657d5db912" style="width: 100.0%; height: 100.0%;">Helen Newberry Joy Hospital<br> Number of COVID patients: 51<br> Number of ICU patients: 11  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_7397bd0c17634582b1f61b3d0c3ff171.setContent(html_b957cfafab3241a1b52900657d5db912);
+        
+
+        circle_91fa4dd728344ed9b76ffddae8a5e7f7.bindPopup(popup_7397bd0c17634582b1f61b3d0c3ff171)
+        ;
+
+        
+    
+    
+            var circle_df6995d5996a4e9eabb88e7673c3aed6 = L.circle(
+                [47.2389105, -88.4434608],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5655.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_a1704c1ab70848b3bc6cf97421e45de7 = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_1e4619fe20094705b43e9dedbbad9c7a = $(`<div id="html_1e4619fe20094705b43e9dedbbad9c7a" style="width: 100.0%; height: 100.0%;">Aspirus<br> Number of COVID patients: 2<br> Number of ICU patients: 0  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_a1704c1ab70848b3bc6cf97421e45de7.setContent(html_1e4619fe20094705b43e9dedbbad9c7a);
+        
+
+        circle_df6995d5996a4e9eabb88e7673c3aed6.bindPopup(popup_a1704c1ab70848b3bc6cf97421e45de7)
+        ;
+
+        
+    
+    
+            var circle_6c21bda1af004164a4d65b189591e7ef = L.circle(
+                [43.8426786, -82.65201549999999],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5335.0, "stroke": true, "weight": 3}
+            ).addTo(map_9772d28124d649798ca1862f52810310);
+        
+    
+        var popup_205c770f46734bb291c49ab847e1375b = L.popup({"maxWidth": 300, "minWidth": 0});
+
+        
+            var html_e29a7b78362f48b09038c8fa0efd0cd8 = $(`<div id="html_e29a7b78362f48b09038c8fa0efd0cd8" style="width: 100.0%; height: 100.0%;">Harbor Beach Community Hospital<br> Number of COVID patients: 1<br> Number of ICU patients: 1  <a href="https://www.munsonhealthcare.org/munson-healthcare-foundations/ways-to-give/covid-19-response/covid-19-how-you-can-help">Donate Here</a></div>`)[0];
+            popup_205c770f46734bb291c49ab847e1375b.setContent(html_e29a7b78362f48b09038c8fa0efd0cd8);
+        
+
+        circle_6c21bda1af004164a4d65b189591e7ef.bindPopup(popup_205c770f46734bb291c49ab847e1375b)
+        ;
+
+        
+    
+</script>
